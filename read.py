@@ -2,15 +2,19 @@ import os
 import re
 from io import StringIO
 
+import numpy as np
 import openpyxl
 import xlrd
+from copy import copy
+import pandas as pd
 from openpyxl.cell.cell import ILLEGAL_CHARACTERS_RE
+from openpyxl.utils import get_column_letter
 from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 from pdfminer.pdfinterp import PDFResourceManager, process_pdf
 
 
-def read_pdf(pdf, new_name='testcase.txt'):
+def read_pdf(pdf):
     # resource manager
     rsrcmgr = PDFResourceManager()
     retstr = StringIO()
@@ -23,7 +27,7 @@ def read_pdf(pdf, new_name='testcase.txt'):
     retstr.close()
     # 获取所有行
     lines = str(content).split("\n")
-
+    new_name = 'testcase.txt'
     if os.path.exists(new_name): os.remove(new_name)
     with open("%s" % (new_name), 'a', encoding="utf-8") as f:
         # new_lines = set(lines)
@@ -84,13 +88,22 @@ def find_revised(lines):
     return {'added': added, 'revised': revised, 'removed': removed}
 
 
-def read_tc_title(txt_name='testcase.txt', revised_json=None):
+def read_tc_title(excel_path=None, sheet_name=None, revised_json=None):
     global f
-    data = openpyxl.load_workbook('Homekit用例.xlsx')  # 打开工作簿
-    sheetnames = data.get_sheet_names()
-    data.create_sheet('a', 0)
-    sheet = data.get_sheet_by_name(sheetnames[0])
-    sheet = data.active
+    txt_name = 'testcase.txt'
+    excelWriter = pd.ExcelFile(excel_path, engine='openpyxl')
+    book = openpyxl.load_workbook(excel_path)  # 打开工作簿
+    excelWriter.book = book
+
+    # sheetnames = data.get_sheet_names()
+    # data.create_sheet('a', 0)
+
+    src_sheet = book.get_sheet_by_name(sheet_name)
+    df = pd.read_excel(excel_path, sheet_name=sheet_name)
+
+    # df = xd.parse(sheet_name)
+
+    # sheet = data.active
     revised_tc = []
     try:
         f = open(txt_name, "r")
@@ -104,8 +117,6 @@ def read_tc_title(txt_name='testcase.txt', revised_json=None):
             it = iter(lines)
             for line in it:
                 if line.find(tc + ' ') > -1 or flag_title == 1 or flag_applies == 1 or flag_tc == 1:
-                    # print(line)
-                    title = title + str(line).replace(tc + ' ', '')
 
                     if line.find(tc + ' ') > -1:
                         # sum = sum + 1
@@ -140,20 +151,67 @@ def read_tc_title(txt_name='testcase.txt', revised_json=None):
                             case_content = case_content + line
                             flag_empty = 0
 
-                # elif flag_revise == 1:
-                #
-                #
-
             title = ILLEGAL_CHARACTERS_RE.sub(r'', title)
             case_content = ILLEGAL_CHARACTERS_RE.sub(r'', case_content)
             revised_tc.append({'tc': tc, 'title': title, 'content': case_content})
-            nrows = sheet.max_row  # 获得行数
-            ncolumns = sheet.max_column  # 获得列数
+            # nrows = sheet.max_row  # 获得行数
+            # ncolumns = sheet.max_column  # 获得列数
             # 注意行业列下标是从1开始的
-            sheet.cell(nrows + 1, 1).value = tc
-            sheet.cell(nrows + 1, 2).value = title
-            sheet.cell(nrows + 1, 3).value = case_content
-        data.save('Homekit用例_1.xlsx')
+            row_tc = df.index[df["用例编号"] == tc].tolist()  # this will only contain 2,4,6 rows
+            if len(row_tc) > 0:
+                df.at[row_tc, "用例标题"] = title
+                df.at[row_tc, "英文步骤"] = case_content
+
+                def equal(x, color='blue'):
+                    if x == tc:
+                        color = '#99ff66'  # light green  '#99ff66'
+                    else:
+                        color = "#000000"
+                    return f'background-color: {color}'
+
+                # axis =0 ，按列设置样式
+                df.style.apply(equal, axis=0, subset=["用例标题"])
+
+            # for row in df_tc.iterrows():
+            #     row
+            # sheet.cell(nrows + 1, 1).value = tc
+            # sheet.cell(nrows + 1, 2).value = title
+            # sheet.cell(nrows + 1, 3).value = case_content
+        # data.save('Homekit用例_1.xlsx')
+
+        df.to_excel(excel_writer=excelWriter, sheet_name=sheet_name+"已更新", index=None)
+
+        target_sheet = excelWriter.book.get_sheet_by_name(sheet_name + "已更新")
+        for row in src_sheet:
+            for cell in row:
+                if cell.has_style:
+                    target_sheet[cell.coordinate].font = copy(cell.font)
+                    target_sheet[cell.coordinate].border = copy(cell.border)
+                    target_sheet[cell.coordinate].fill = copy(cell.fill)
+                    target_sheet[cell.coordinate].number_format = copy(
+                        cell.number_format
+                    )
+                    target_sheet[cell.coordinate].protection = copy(cell.protection)
+                    target_sheet[cell.coordinate].alignment = copy(cell.alignment)
+        wm = list(zip(src_sheet.merged_cells))  # 开始处理合并单元格
+        if len(wm) > 0:  # 检测源xlsx中合并的单元格
+            for i in range(0, len(wm)):
+                cell2 = (
+                    str(wm[i]).replace("(<MergedCellRange ", "").replace(">,)", "")
+                )  # 获取合并单元格的范围
+                target_sheet.merge_cells(cell2)  # 合并单元格
+            # 开始处理行高列宽
+        for i in range(1, src_sheet.max_row + 1):
+            target_sheet.row_dimensions[i].height = src_sheet.row_dimensions[
+                i
+            ].height
+        for i in range(1, src_sheet.max_column + 1):
+            target_sheet.column_dimensions[
+                get_column_letter(i)
+            ].width = src_sheet.column_dimensions[get_column_letter(i)].width
+
+        excelWriter.save()  # 保存
+        excelWriter.close()  # 关闭文件
 
     finally:
         f.close()
@@ -162,4 +220,4 @@ def read_tc_title(txt_name='testcase.txt', revised_json=None):
 
 if __name__ == '__main__':
     with open('/Users/zaochuan/Downloads/HomeKit Certification Test Cases R11.1.pdf', "rb") as my_pdf:
-        read_tc_title(revised_json=find_revised(read_pdf(my_pdf)))
+        read_tc_title("/Users/zaochuan/Downloads/HomeKit用例.xlsx", "R11.1", revised_json=find_revised(read_pdf(my_pdf)))
