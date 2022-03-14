@@ -2,9 +2,10 @@ import os
 import re
 from io import StringIO
 
-import numpy as np
+# import numpy as np
 import openpyxl
-import xlrd
+from openpyxl import load_workbook
+
 from copy import copy
 import pandas as pd
 from openpyxl.cell.cell import ILLEGAL_CHARACTERS_RE
@@ -28,8 +29,8 @@ def read_pdf(pdf):
     # 获取所有行
     lines = str(content).split("\n")
     new_name = 'testcase.txt'
-    if os.path.exists(new_name): os.remove(new_name)
-    with open("%s" % (new_name), 'a', encoding="utf-8") as f:
+    # if os.path.exists(new_name): os.remove(new_name)
+    with open("%s" % (new_name), 'w', encoding="utf-8") as f:
         # new_lines = set(lines)
         # content = re.sub('\d+.*copyright.*\.[\r|\r\n].*\n\d*', '', content, count=0, flags=re.I)
         # pattern = re.compile('\d+.*copyright.*\.[\r|\r\n].*\n\d*')
@@ -88,26 +89,28 @@ def find_revised(lines):
     return {'added': added, 'revised': revised, 'removed': removed}
 
 
-def read_tc_title(excel_path=None, sheet_name=None, revised_json=None):
+def read_tc_title(excel_path=None, sheet_name=None, revised_json=None, testcase_column_name="用例编号"):
     global f
     txt_name = 'testcase.txt'
+
     excel_obj = pd.ExcelFile(excel_path, engine='openpyxl')
     book = openpyxl.load_workbook(excel_path)  # 打开工作簿
-    excel_obj.book = book
-    # excelWriter.book = book
 
     # sheetnames = data.get_sheet_names()
     # data.create_sheet('a', 0)
 
     src_sheet = book.get_sheet_by_name(sheet_name)
-    df = pd.read_excel(excel_path, sheet_name=sheet_name)
 
-    # df = xd.parse(sheet_name)
-
+    copy_sheet = book.copy_worksheet(book[sheet_name])
+    copy_sheet.title = sheet_name + " 已更新"
+    book.save(excel_obj)
+    book.close()
+    df = pd.read_excel(excel_path, sheet_name=sheet_name + " 已更新")
     # sheet = data.active
     revised_tc = []
     try:
-        f = open(txt_name, "r")
+        # f = open(txt_name).read().decode()
+        f = open(txt_name, "r", encoding="gb18030", errors="ignore")
         lines = f.readlines()
         for tc in revised_json['revised']:
             flag_title = flag_tc = flag_applies = flag_empty = 0
@@ -158,61 +161,66 @@ def read_tc_title(excel_path=None, sheet_name=None, revised_json=None):
             # nrows = sheet.max_row  # 获得行数
             # ncolumns = sheet.max_column  # 获得列数
             # 注意行业列下标是从1开始的
+            """使用pandas获取单元格行列，并替换dataframe的值"""
             row_tc = df.index[df["用例编号"] == tc].tolist()  # this will only contain 2,4,6 rows
             if len(row_tc) > 0:
                 df.at[row_tc, "用例标题"] = title
                 df.at[row_tc, "英文步骤"] = case_content
 
-                def equal(x, color='blue'):
-                    if x == tc:
-                        color = '#99ff66'  # light green  '#99ff66'
-                    else:
-                        color = "#000000"
-                    return f'background-color: {color}'
+                # def equal(x, color='blue'):
+                #     if x == tc:
+                #         color = '#99ff66'  # light green  '#99ff66'
+                #     else:
+                #         color = "#000000"
+                #     return f'background-color: {color}'
+                #
+                # # axis =0 ，按列设置样式
+                # df.style.apply(equal, axis=0, subset=["用例标题"])
 
-                # axis =0 ，按列设置样式
-                df.style.apply(equal, axis=0, subset=["用例标题"])
-
-            # for row in df_tc.iterrows():
-            #     row
-            # sheet.cell(nrows + 1, 1).value = tc
-            # sheet.cell(nrows + 1, 2).value = title
-            # sheet.cell(nrows + 1, 3).value = case_content
-        # data.save('Homekit用例_1.xlsx')
-
-        df.to_excel(excel_writer=excel_obj, sheet_name=sheet_name+"已更新", index=None)
+        # df.to_excel()
+        # for row in df_tc.iterrows():
+        #     row
+        # sheet.cell(nrows + 1, 1).value = tc
+        # sheet.cell(nrows + 1, 2).value = title
+        # sheet.cell(nrows + 1, 3).value = case_content
+        # # data.save('Homekit用例_1.xlsx')
+        writer = pd.ExcelWriter(excel_path, engine="openpyxl")
+        book = load_workbook(excel_path)
+        writer.book = book
+        df.to_excel(excel_writer=writer, sheet_name=sheet_name+"已更新", index=None)
 
         target_sheet = excel_obj.book.get_sheet_by_name(sheet_name + "已更新")
-        for row in src_sheet:
-            for cell in row:
-                if cell.has_style:
-                    target_sheet[cell.coordinate].font = copy(cell.font)
-                    target_sheet[cell.coordinate].border = copy(cell.border)
-                    target_sheet[cell.coordinate].fill = copy(cell.fill)
-                    target_sheet[cell.coordinate].number_format = copy(
-                        cell.number_format
-                    )
-                    target_sheet[cell.coordinate].protection = copy(cell.protection)
-                    target_sheet[cell.coordinate].alignment = copy(cell.alignment)
-        wm = list(zip(src_sheet.merged_cells))  # 开始处理合并单元格
-        if len(wm) > 0:  # 检测源xlsx中合并的单元格
-            for i in range(0, len(wm)):
-                cell2 = (
-                    str(wm[i]).replace("(<MergedCellRange ", "").replace(">,)", "")
-                )  # 获取合并单元格的范围
-                target_sheet.merge_cells(cell2)  # 合并单元格
-            # 开始处理行高列宽
-        for i in range(1, src_sheet.max_row + 1):
-            target_sheet.row_dimensions[i].height = src_sheet.row_dimensions[
-                i
-            ].height
-        for i in range(1, src_sheet.max_column + 1):
-            target_sheet.column_dimensions[
-                get_column_letter(i)
-            ].width = src_sheet.column_dimensions[get_column_letter(i)].width
+        # for row in src_sheet:
+        #     for cell in row:
+        #         target_sheet[cell.coordinate] = copy(cell)
+        #         if cell.has_style:
+        #             target_sheet[cell.coordinate].font = copy(cell.font)
+        #             target_sheet[cell.coordinate].border = copy(cell.border)
+        #             target_sheet[cell.coordinate].fill = copy(cell.fill)
+        #             target_sheet[cell.coordinate].number_format = copy(
+        #                 cell.number_format
+        #             )
+        #             target_sheet[cell.coordinate].protection = copy(cell.protection)
+        #             target_sheet[cell.coordinate].alignment = copy(cell.alignment)
+        # wm = list(zip(src_sheet.merged_cells))  # 开始处理合并单元格
+        # if len(wm) > 0:  # 检测源xlsx中合并的单元格
+        #     for i in range(0, len(wm)):
+        #         cell2 = (
+        #             str(wm[i]).replace("(<MergedCellRange ", "").replace(">,)", "")
+        #         )  # 获取合并单元格的范围
+        #         target_sheet.merge_cells(cell2)  # 合并单元格
+        #     # 开始处理行高列宽
+        # for i in range(1, src_sheet.max_row + 1):
+        #     target_sheet.row_dimensions[i].height = src_sheet.row_dimensions[
+        #         i
+        #     ].height
+        # for i in range(1, src_sheet.max_column + 1):
+        #     target_sheet.column_dimensions[
+        #         get_column_letter(i)
+        #     ].width = src_sheet.column_dimensions[get_column_letter(i)].width
 
-        excel_obj..save()  # 保存
-        excelWriter.close()  # 关闭文件
+        excel_obj.book.save()  # 保存
+        excel_obj.book.close()  # 关闭文件
 
     finally:
         f.close()
@@ -220,5 +228,5 @@ def read_tc_title(excel_path=None, sheet_name=None, revised_json=None):
 
 
 if __name__ == '__main__':
-    with open('/Users/zaochuan/Downloads/HomeKit Certification Test Cases R11.1.pdf', "rb") as my_pdf:
-        read_tc_title("/Users/zaochuan/Downloads/HomeKit用例.xlsx", "R11.1", revised_json=find_revised(read_pdf(my_pdf)))
+    with open('./HomeKit Certification Test Cases R11.1.pdf', "rb") as my_pdf:
+        read_tc_title("./HomeKit用例.xlsx", "R11.1", revised_json=find_revised(read_pdf(my_pdf)))
