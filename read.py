@@ -91,9 +91,10 @@ def find_revised(lines):
 def read_tc_title(excel_path=None, sheet_name=None, revised_json=None):
     global f
     txt_name = 'testcase.txt'
-    excelWriter = pd.ExcelFile(excel_path, engine='openpyxl')
+    excel_obj = pd.ExcelFile(excel_path, engine='openpyxl')
     book = openpyxl.load_workbook(excel_path)  # 打开工作簿
-    excelWriter.book = book
+    excel_obj.book = book
+    # excelWriter.book = book
 
     # sheetnames = data.get_sheet_names()
     # data.create_sheet('a', 0)
@@ -179,9 +180,9 @@ def read_tc_title(excel_path=None, sheet_name=None, revised_json=None):
             # sheet.cell(nrows + 1, 3).value = case_content
         # data.save('Homekit用例_1.xlsx')
 
-        df.to_excel(excel_writer=excelWriter, sheet_name=sheet_name+"已更新", index=None)
+        df.to_excel(excel_writer=excel_obj, sheet_name=sheet_name+"已更新", index=None)
 
-        target_sheet = excelWriter.book.get_sheet_by_name(sheet_name + "已更新")
+        target_sheet = excel_obj.book.get_sheet_by_name(sheet_name + "已更新")
         for row in src_sheet:
             for cell in row:
                 if cell.has_style:
@@ -210,7 +211,7 @@ def read_tc_title(excel_path=None, sheet_name=None, revised_json=None):
                 get_column_letter(i)
             ].width = src_sheet.column_dimensions[get_column_letter(i)].width
 
-        excelWriter.save()  # 保存
+        excel_obj..save()  # 保存
         excelWriter.close()  # 关闭文件
 
     finally:
