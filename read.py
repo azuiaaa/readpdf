@@ -116,23 +116,23 @@ def read_tc_title(excel_path=None, old_sheet=None, sheet_name=None, revised_json
             # process = df[df["用例编号"].str.contains(pattern.group(1) + "\d+", regex=True) == pattern.group(1)]
             # row_tc = process[df["用例编号"] > tc]
 
-            flag = df["用例编号"].str.contains(pattern.group(1)+"\d+", regex=True)
+            flag = df["用例编号"].str.contains(pattern.group(1)+"\d+", regex=True, na=True)
             process = df[flag]
             print("!!!!!!!!!!!!!!!,{}".format(df.index[flag]))
             num = df.index[flag]
             if len(num) > 0:
-                insert_id = num[-1]
+                insert_id = num[-1] + 1
                 row_tc = df.index[process[tc < process["用例编号"]]]
                 if len(row_tc) > 0:
-                    insert_id = row_tc[0]
+                    insert_id = row_tc[0] + 1
             else:
-                insert_id = 0
-            df_add = pd.DataFrame({"用例编号": tc, "用例标题": result["title"], "适用设备": result["applies"], "英文步骤": result["content"], "用例更新点(Revised)": sheet_name + "新增"})
+                insert_id = 1
+            df_add = pd.DataFrame(list({"用例编号": tc, "用例标题": result["title"], "适用设备": result["applies"], "英文步骤": result["content"], "用例更新点(Revised)": sheet_name + "新增"}))
             df1 = df.iloc[:insert_id, :]
             df2 = df.iloc[insert_id:, :]
-            df = pd.concat([df1, df_add, df2], ignore_index=True)
+            df = pd.concat([df1, df_add.transpose(), df2], ignore_index=True, axis=1)
 
-            print(row_tc)
+            # print(row_tc)
 
             # df.apply()
 
