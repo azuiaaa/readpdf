@@ -31,31 +31,23 @@ def read_pdf(pdf):
     new_name = 'testcase.txt'
     # if os.path.exists(new_name): os.remove(new_name)
     with open("%s" % (new_name), 'w', encoding="utf-8") as f:
-        # new_lines = set(lines)
-        # content = re.sub('\d+.*copyright.*\.[\r|\r\n].*\n\d*', '', content, count=0, flags=re.I)
-        # pattern = re.compile('\d+.*copyright.*\.[\r|\r\n].*\n\d*')
 
-        # print(pattern.search(content))
-        # f.write(content)
         for line in lines:
-            # line.strip().replace('\d+.*copyright.*\.', '')
-            # re.sub('', )
+            """移除版权行"""
             pattern = re.compile(r'\d+.*copyright.*\.', re.I)  # 注意用4个\\\\来替换\
-            # line = pattern.sub('', line.strip())
             if pattern.match(line):
-                # print(line)
                 lines.remove(line)
                 continue
+            """移除页码行"""
             if re.compile(r'^\d+$').match(line):
-                # print(line)
                 lines.remove(line)
                 continue
-            # line = re.compile(r'^\d+$').sub('', line.strip())
+            """将每条用例结尾处加上感叹号方面"""
             if re.compile(r'TC\S+\d+\s').match(line) or re.compile(r'chapter', re.I).match(line):
                 print(line)
                 f.write('!!!\n')
 
-            f.write(line+'\n')
+            f.write(line + '\n')
     return lines
 
 
@@ -89,144 +81,158 @@ def find_revised(lines):
     return {'added': added, 'revised': revised, 'removed': removed}
 
 
-def read_tc_title(excel_path=None, sheet_name=None, revised_json=None, testcase_column_name="用例编号"):
-    global f
+def read_tc_title(excel_path=None, old_sheet=None, sheet_name=None, revised_json=None, testcase_column_name="用例编号"):
+    global f, excel_obj, writer
     txt_name = 'testcase.txt'
 
-    excel_obj = pd.ExcelFile(excel_path, engine='openpyxl')
-    book = openpyxl.load_workbook(excel_path)  # 打开工作簿
-
-    # sheetnames = data.get_sheet_names()
-    # data.create_sheet('a', 0)
-
-    src_sheet = book.get_sheet_by_name(sheet_name)
-
-    copy_sheet = book.copy_worksheet(book[sheet_name])
-    copy_sheet.title = sheet_name + " 已更新"
-    book.save(excel_obj)
-    book.close()
-    df = pd.read_excel(excel_path, sheet_name=sheet_name + " 已更新")
     # sheet = data.active
     revised_tc = []
     try:
-        # f = open(txt_name).read().decode()
-        f = open(txt_name, "r", encoding="gb18030", errors="ignore")
+        # """创建一个复制表"""
+        new_sheet_name = sheet_name + "（更新中）"
+        #
+        # book = openpyxl.load_workbook(excel_path)  # 打开工作簿
+        # if new_sheet_name in book.get_sheet_names():
+        #     book.remove(book[new_sheet_name])
+        # copy_sheet = book.copy_worksheet(book[sheet_name])
+        # copy_sheet.title = new_sheet_name
+        #
+        # book.save(excel_path)
+        # book.close()
+
+        """需要用pandas去进行用例部分内容的替换，首先需要获取到一个用例内容的dataframe"""
+        excel_obj = pd.ExcelFile(excel_path, engine='openpyxl')
+        df = pd.read_excel(excel_path, sheet_name=old_sheet)
+
+        # 从解析出来的txt中获取到所有行
+        f = open(txt_name, "r", encoding="UTF-8", errors="ignore")
         lines = f.readlines()
+
+        """更新增加的用例"""
+        for tc in revised_json["added"]:
+            result = analyze_test_case(lines, tc)
+            pattern = re.match(r"(\D+)(\d+)", tc)
+            print("{}, {}".format(pattern.group(1), pattern.group(2)))
+            # process = df[df["用例编号"].str.contains(pattern.group(1) + "\d+", regex=True) == pattern.group(1)]
+            # row_tc = process[df["用例编号"] > tc]
+
+            flag = df["用例编号"].str.contains(pattern.group(1)+"\d+", regex=True)
+            process = df[flag]
+            print("!!!!!!!!!!!!!!!,{}".format(df.index[flag]))
+            num = df.index[flag]
+            if len(num) > 0:
+                insert_id = num[-1]
+                row_tc = df.index[process[tc < process["用例编号"]]]
+                if len(row_tc) > 0:
+                    insert_id = row_tc[0]
+            else:
+                insert_id = 0
+            df_add = pd.DataFrame({"用例编号": tc, "用例标题": result["title"], "适用设备": result["applies"], "英文步骤": result["content"], "用例更新点(Revised)": sheet_name + "新增"})
+            df1 = df.iloc[:insert_id, :]
+            df2 = df.iloc[insert_id:, :]
+            df = pd.concat([df1, df_add, df2], ignore_index=True)
+
+            print(row_tc)
+
+            # df.apply()
+
+        """更新更新的用例"""
+        # f = open(txt_name, "r", encoding="gb18030", errors="ignore")  # 会导致出现中文乱码
         for tc in revised_json['revised']:
-            flag_title = flag_tc = flag_applies = flag_empty = 0
-            title = ''
-            case_content = ''
-            # print(tc)
-            sum = 0
-            it = iter(lines)
-            for line in it:
-                if line.find(tc + ' ') > -1 or flag_title == 1 or flag_applies == 1 or flag_tc == 1:
+            result = analyze_test_case(lines, tc)
 
-                    if line.find(tc + ' ') > -1:
-                        # sum = sum + 1
-                        # print(sum)
-                        print('title结束')
-                        flag_title = 1
-                        title = title + line.replace(tc + ' ', '')
-                        continue
-                    if flag_title == 1:
-                        title = title + line
-                        if line.strip() == '':
-                            flag_applies = 1
-                            flag_title = 0
-                            continue
-                        # it.__next__()
-                    # elif line.find('Applies to') > -1:
-                    if flag_applies == 1:
-                        if line.strip() == '':
-                            flag_applies = 0
-                            flag_tc = 1
-                            continue
-                        else:
-                            continue
-                    if flag_tc == 1:
-                        if line.strip() == '':
-                            flag_empty = flag_empty + 1
-                            continue
-                        if line.startswith('!!!') or flag_empty > 1:
-                            flag_tc = 0
-                            break
-                        else:
-                            case_content = case_content + line
-                            flag_empty = 0
-
-            title = ILLEGAL_CHARACTERS_RE.sub(r'', title)
-            case_content = ILLEGAL_CHARACTERS_RE.sub(r'', case_content)
-            revised_tc.append({'tc': tc, 'title': title, 'content': case_content})
-            # nrows = sheet.max_row  # 获得行数
-            # ncolumns = sheet.max_column  # 获得列数
-            # 注意行业列下标是从1开始的
             """使用pandas获取单元格行列，并替换dataframe的值"""
             row_tc = df.index[df["用例编号"] == tc].tolist()  # this will only contain 2,4,6 rows
             if len(row_tc) > 0:
-                df.at[row_tc, "用例标题"] = title
-                df.at[row_tc, "英文步骤"] = case_content
+                df.at[row_tc, "用例标题"] = result.get('title')
+                df.at[row_tc, "适用设备"] = result.get('applies')
+                df.at[row_tc, "英文步骤"] = result.get('content')
+                df.at[row_tc, "用例更新点(Revised)"] = sheet_name + "更新"
 
-                # def equal(x, color='blue'):
-                #     if x == tc:
-                #         color = '#99ff66'  # light green  '#99ff66'
-                #     else:
-                #         color = "#000000"
-                #     return f'background-color: {color}'
-                #
-                # # axis =0 ，按列设置样式
-                # df.style.apply(equal, axis=0, subset=["用例标题"])
+        """更新移除的用例"""
+        for tc in revised_json['removed']:
+            """使用pandas获取单元格行列，并替换dataframe的值"""
+            row_tc = df.index[df["用例编号"] == tc].tolist()  # this will only contain 2,4,6 rows
+            if len(row_tc) > 0:
+                df.at[row_tc, "用例更新点(Revised)"] = sheet_name + "移除"
 
-        # df.to_excel()
+        # nrows = sheet.max_row  # 获得行数
+        # ncolumns = sheet.max_column  # 获得列数
         # for row in df_tc.iterrows():
         #     row
         # sheet.cell(nrows + 1, 1).value = tc
         # sheet.cell(nrows + 1, 2).value = title
         # sheet.cell(nrows + 1, 3).value = case_content
         # # data.save('Homekit用例_1.xlsx')
+        book = openpyxl.load_workbook(excel_path)
         writer = pd.ExcelWriter(excel_path, engine="openpyxl")
-        book = load_workbook(excel_path)
+        print('{}, {}'.format(excel_path, type(excel_path)))
         writer.book = book
-        df.to_excel(excel_writer=writer, sheet_name=sheet_name+"已更新", index=None)
+        if new_sheet_name in writer.book.sheetnames:
+            writer.book.remove(writer.book[new_sheet_name])
+        df.to_excel(excel_writer=writer, sheet_name=new_sheet_name, index=None)
+        writer.save()
+        book.close()
 
-        target_sheet = excel_obj.book.get_sheet_by_name(sheet_name + "已更新")
-        # for row in src_sheet:
-        #     for cell in row:
-        #         target_sheet[cell.coordinate] = copy(cell)
-        #         if cell.has_style:
-        #             target_sheet[cell.coordinate].font = copy(cell.font)
-        #             target_sheet[cell.coordinate].border = copy(cell.border)
-        #             target_sheet[cell.coordinate].fill = copy(cell.fill)
-        #             target_sheet[cell.coordinate].number_format = copy(
-        #                 cell.number_format
-        #             )
-        #             target_sheet[cell.coordinate].protection = copy(cell.protection)
-        #             target_sheet[cell.coordinate].alignment = copy(cell.alignment)
-        # wm = list(zip(src_sheet.merged_cells))  # 开始处理合并单元格
-        # if len(wm) > 0:  # 检测源xlsx中合并的单元格
-        #     for i in range(0, len(wm)):
-        #         cell2 = (
-        #             str(wm[i]).replace("(<MergedCellRange ", "").replace(">,)", "")
-        #         )  # 获取合并单元格的范围
-        #         target_sheet.merge_cells(cell2)  # 合并单元格
-        #     # 开始处理行高列宽
-        # for i in range(1, src_sheet.max_row + 1):
-        #     target_sheet.row_dimensions[i].height = src_sheet.row_dimensions[
-        #         i
-        #     ].height
-        # for i in range(1, src_sheet.max_column + 1):
-        #     target_sheet.column_dimensions[
-        #         get_column_letter(i)
-        #     ].width = src_sheet.column_dimensions[get_column_letter(i)].width
-
-        excel_obj.book.save()  # 保存
-        excel_obj.book.close()  # 关闭文件
 
     finally:
         f.close()
+        # writer.close()
+        excel_obj.close()
     return revised_tc
+
+
+def analyze_test_case(lines, testcase_name) -> dict:
+    result = dict()
+
+    flag_title = flag_tc = flag_applies = flag_empty = 0
+    title = ''
+    case_content = ''
+    applies = ''
+
+    it = iter(lines)
+    for line in it:
+        if line.find(testcase_name + ' ') > -1 or flag_title == 1 or flag_applies == 1 or flag_tc == 1:
+
+            if line.find(testcase_name + ' ') > -1:
+                flag_title = 1
+                title = title + line.replace(testcase_name + ' ', '')
+                continue
+            if flag_title == 1:
+                title = title + line
+                if line.strip() == '':
+                    flag_applies = 1
+                    flag_title = 0
+                    continue
+                # it.__next__()
+            # elif line.find('Applies to') > -1:
+            if flag_applies == 1:
+                if line.strip() == '':
+                    flag_applies = 0
+                    flag_tc = 1
+                    continue
+                else:
+                    applies = applies + line
+                    continue
+            if flag_tc == 1:
+                if line.strip() == '':
+                    flag_empty = flag_empty + 1
+                    continue
+                if line.startswith('!!!') or flag_empty > 1:
+                    flag_tc = 0
+                    break
+                else:
+                    case_content = case_content + line
+                    flag_empty = 0
+
+    """将部分不是常用字符的内容删除"""
+    title = ILLEGAL_CHARACTERS_RE.sub(r'', title)
+    case_content = ILLEGAL_CHARACTERS_RE.sub(r'', case_content)
+    applies = ILLEGAL_CHARACTERS_RE.sub(r'', applies)
+
+    return {'tc': testcase_name, 'title': title, 'applies': applies, 'content': case_content}
 
 
 if __name__ == '__main__':
     with open('./HomeKit Certification Test Cases R11.1.pdf', "rb") as my_pdf:
-        read_tc_title("./HomeKit用例.xlsx", "R11.1", revised_json=find_revised(read_pdf(my_pdf)))
+        read_tc_title("./HomeKit用例.xlsx", "R11", "R11.1", revised_json=find_revised(read_pdf(my_pdf)))

@@ -293,3 +293,86 @@ def find_revised(lines):
 if __name__ == '__main__':
     with open('/Users/zaochuan/Downloads/HomeKit Certification Test Cases R11.2.pdf', "rb") as my_pdf:
         read_tc_title(revised_json=find_revised(read_pdf(my_pdf)))
+
+
+"""复制表的样式"""
+# for row in src_sheet:
+#     for cell in row:
+#         target_sheet[cell.coordinate] = copy(cell)
+#         if cell.has_style:
+#             target_sheet[cell.coordinate].font = copy(cell.font)
+#             target_sheet[cell.coordinate].border = copy(cell.border)
+#             target_sheet[cell.coordinate].fill = copy(cell.fill)
+#             target_sheet[cell.coordinate].number_format = copy(
+#                 cell.number_format
+#             )
+#             target_sheet[cell.coordinate].protection = copy(cell.protection)
+#             target_sheet[cell.coordinate].alignment = copy(cell.alignment)
+# wm = list(zip(src_sheet.merged_cells))  # 开始处理合并单元格
+# if len(wm) > 0:  # 检测源xlsx中合并的单元格
+#     for i in range(0, len(wm)):
+#         cell2 = (
+#             str(wm[i]).replace("(<MergedCellRange ", "").replace(">,)", "")
+#         )  # 获取合并单元格的范围
+#         target_sheet.merge_cells(cell2)  # 合并单元格
+#     # 开始处理行高列宽
+# for i in range(1, src_sheet.max_row + 1):
+#     target_sheet.row_dimensions[i].height = src_sheet.row_dimensions[
+#         i
+#     ].height
+# for i in range(1, src_sheet.max_column + 1):
+#     target_sheet.column_dimensions[
+#         get_column_letter(i)
+#     ].width = src_sheet.column_dimensions[get_column_letter(i)].width
+
+# excel_obj.book.save()  # 保存
+
+"""修改单元格内容"""
+# for tc in revised_json['revised']:
+# flag_title = flag_tc = flag_applies = flag_empty = 0
+#     title = ''
+#     case_content = ''
+#     applies = ''
+#     # print(tc)
+#     sum = 0
+#     it = iter(lines)
+#     for line in it:
+#         if line.find(tc + ' ') > -1 or flag_title == 1 or flag_applies == 1 or flag_tc == 1:
+#
+#             if line.find(tc + ' ') > -1:
+#                 flag_title = 1
+#                 title = title + line.replace(tc + ' ', '')
+#                 continue
+#             if flag_title == 1:
+#                 title = title + line
+#                 if line.strip() == '':
+#                     flag_applies = 1
+#                     flag_title = 0
+#                     continue
+#                 # it.__next__()
+#             # elif line.find('Applies to') > -1:
+#             if flag_applies == 1:
+#                 if line.strip() == '':
+#                     flag_applies = 0
+#                     flag_tc = 1
+#                     continue
+#                 else:
+#                     applies = applies + line
+#                     continue
+#             if flag_tc == 1:
+#                 if line.strip() == '':
+#                     flag_empty = flag_empty + 1
+#                     continue
+#                 if line.startswith('!!!') or flag_empty > 1:
+#                     flag_tc = 0
+#                     break
+#                 else:
+#                     case_content = case_content + line
+#                     flag_empty = 0
+#
+#     """将部分不是常用字符的内容删除"""
+#     title = ILLEGAL_CHARACTERS_RE.sub(r'', title)
+#     case_content = ILLEGAL_CHARACTERS_RE.sub(r'', case_content)
+#     applies = ILLEGAL_CHARACTERS_RE.sub(r'', applies)
+#
+#     revised_tc.append({'tc': tc, 'title': title, 'applies': applies, 'content': case_content})
