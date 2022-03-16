@@ -116,9 +116,9 @@ def read_tc_title(excel_path=None, old_sheet=None, sheet_name=None, revised_json
             # process = df[df["用例编号"].str.contains(pattern.group(1) + "\d+", regex=True) == pattern.group(1)]
             # row_tc = process[df["用例编号"] > tc]
 
-            flag = df["用例编号"].str.contains(pattern.group(1)+"\d+", regex=True, na=True)
+            flag = df["用例编号"].str.contains(pattern.group(1)+"\d+", regex=True, na=False)
             process = df[flag]
-            print("!!!!!!!!!!!!!!!,{}".format(df.index[flag]))
+
             num = df.index[flag]
             if len(num) > 0:
                 insert_id = num[-1] + 1
@@ -127,14 +127,16 @@ def read_tc_title(excel_path=None, old_sheet=None, sheet_name=None, revised_json
                     insert_id = row_tc[0] + 1
             else:
                 insert_id = 1
-            df_add = pd.DataFrame(list({"用例编号": tc, "用例标题": result["title"], "适用设备": result["applies"], "英文步骤": result["content"], "用例更新点(Revised)": sheet_name + "新增"}))
+            print(insert_id)
+            # 创建dataframe时，如果时直接传入标称属性为value的字典需要写入index，也就是说，需要在创建DataFrame对象时设定index。当直接传入dict创建时，会报错Cannot mask with non-boolean array containing NA / NaN values
+            df_add = pd.DataFrame({"用例编号": [tc], "用例标题": [result["title"]], "适用设备": [result["applies"]], "英文步骤": [result["content"]], "用例更新点(Revised)": [sheet_name + "新增"]})
+            print(df_add)
             df1 = df.iloc[:insert_id, :]
             df2 = df.iloc[insert_id:, :]
-            df = pd.concat([df1, df_add.transpose(), df2], ignore_index=True, axis=1)
+            df = pd.concat([df1, df_add, df2], ignore_index=True, axis=0)
+            # df = df1.append(df_add).append(df2)
 
-            # print(row_tc)
-
-            # df.apply()
+            print(df)
 
         """更新更新的用例"""
         # f = open(txt_name, "r", encoding="gb18030", errors="ignore")  # 会导致出现中文乱码
@@ -156,14 +158,6 @@ def read_tc_title(excel_path=None, old_sheet=None, sheet_name=None, revised_json
             if len(row_tc) > 0:
                 df.at[row_tc, "用例更新点(Revised)"] = sheet_name + "移除"
 
-        # nrows = sheet.max_row  # 获得行数
-        # ncolumns = sheet.max_column  # 获得列数
-        # for row in df_tc.iterrows():
-        #     row
-        # sheet.cell(nrows + 1, 1).value = tc
-        # sheet.cell(nrows + 1, 2).value = title
-        # sheet.cell(nrows + 1, 3).value = case_content
-        # # data.save('Homekit用例_1.xlsx')
         book = openpyxl.load_workbook(excel_path)
         writer = pd.ExcelWriter(excel_path, engine="openpyxl")
         print('{}, {}'.format(excel_path, type(excel_path)))
@@ -173,7 +167,6 @@ def read_tc_title(excel_path=None, old_sheet=None, sheet_name=None, revised_json
         df.to_excel(excel_writer=writer, sheet_name=new_sheet_name, index=None)
         writer.save()
         book.close()
-
 
     finally:
         f.close()
@@ -234,5 +227,5 @@ def analyze_test_case(lines, testcase_name) -> dict:
 
 
 if __name__ == '__main__':
-    with open('./HomeKit Certification Test Cases R11.1.pdf', "rb") as my_pdf:
-        read_tc_title("./HomeKit用例.xlsx", "R11", "R11.1", revised_json=find_revised(read_pdf(my_pdf)))
+    with open('/Users/zaochuan/Downloads/HomeKit Certification Test Cases R11.2.pdf', "rb") as my_pdf:
+        read_tc_title("./HomeKit用例.xlsx", "R11.1", "R11.2", revised_json=find_revised(read_pdf(my_pdf)))
