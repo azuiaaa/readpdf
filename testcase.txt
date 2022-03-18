@@ -1,7 +1,7 @@
 HomeKit Certification
 Test Cases
 
-Release R11.1
+Release R11.2
 For use with HomeKit Accessory Protocol Specification versions
 
  Developer
@@ -116,6 +116,7 @@ Functional
 
 .
 
+~~~
 1.2 HomeKit-enabled Wi-Fi routers
 
 .
@@ -196,8 +197,9 @@ Functional
 
 .
 
-. 21
+. 22
 
+~~~
 1.3 HAP .
 
 .
@@ -304,8 +306,9 @@ Functional
 
 .
 
-. 113
+. 114
 
+~~~
 1.4 Stateless Programmable Switch .
 
 .
@@ -384,8 +387,9 @@ Functional
 
 .
 
-. 162
+. 163
 
+~~~
 1.5 Accessory Runtime Information Service .
 
 .
@@ -456,8 +460,9 @@ Functional
 
 .
 
-. 165
+. 166
 
+~~~
 1.6 Irrigation System .
 
 .
@@ -552,8 +557,9 @@ Functional
 
 .
 
-. 167
+. 168
 
+~~~
 1.7 Faucet .
 
 .
@@ -658,8 +664,9 @@ Functional
 
 .
 
-. 171
+. 172
 
+~~~
 1.8 Window Service, Window Covering Service, Door Service .
 
 .
@@ -712,8 +719,9 @@ Functional
 
 .
 
-. 174
+. 175
 
+~~~
 1.9 Valve
 
 .
@@ -820,8 +828,9 @@ Functional
 
 .
 
-. 178
+. 179
 
+~~~
 1.10 Software Token-Based Authentication .
 
 .
@@ -894,8 +903,9 @@ Functional
 
 .
 
-. 181
+. 182
 
+~~~
 1.11 Remotes for Apple TV .
 
 .
@@ -984,8 +994,9 @@ Functional
 
 .
 
-. 189
+. 190
 
+~~~
 1.12 IP .
 
 .
@@ -1094,8 +1105,9 @@ Functional
 
 .
 
-. 199
+. 200
 
+~~~
 1.13 IP Timed Write .
 
 .
@@ -1192,8 +1204,9 @@ Functional
 
 .
 
-. 216
+. 217
 
+~~~
 1.14 Wi-Fi Accessory Configuration 2 .
 
 .
@@ -1272,8 +1285,9 @@ Functional
 
 .
 
-. 223
+. 224
 
+~~~
 1.15 Product Plan .
 
 .
@@ -1372,8 +1386,9 @@ Functional
 
 .
 
-. 227
+. 228
 
+~~~
 1.16 Bluetooth .
 
 .
@@ -1474,8 +1489,9 @@ Functional
 
 .
 
-. 229
+. 230
 
+~~~
 1.17 IP Cameras
 
 .
@@ -1576,8 +1592,9 @@ Functional
 
 .
 
-. 244
+. 245
 
+~~~
 1.18 Video Doorbell .
 
 .
@@ -1674,8 +1691,9 @@ Functional
 
 .
 
-. 268
+. 269
 
+~~~
 1.19 Camera Event Recording .
 
 .
@@ -1762,8 +1780,9 @@ Functional
 
 .
 
-. 276
+. 277
 
+~~~
 1.20 HomeKit Data Stream .
 
 .
@@ -1852,8 +1871,9 @@ Functional
 
 .
 
-. 333
+. 334
 
+~~~
 1.21 Thread .
 
 .
@@ -1958,8 +1978,9 @@ Functional
 
 .
 
-. 341
+. 342
 
+~~~
 1.22 Accessory Diagnostics .
 
 .
@@ -2048,8 +2069,9 @@ Functional
 
 .
 
-. 388
+. 389
 
+~~~
 1.23 Light Shift
 
 .
@@ -2152,8 +2174,9 @@ Functional
 
 .
 
-. 395
+. 396
 
+~~~
 1.24 Wi-Fi Reconfiguration .
 
 .
@@ -2242,8 +2265,9 @@ Functional
 
 .
 
-. 443
+. 444
 
+~~~
 1.25 NFC Access and Pin Code Access Locks .
 
 .
@@ -2314,8 +2338,9 @@ Functional
 
 .
 
-. 461
+. 462
 
+~~~
 1.26 Accessory Firmware Updates
 
 .
@@ -2398,10 +2423,11 @@ Functional
 
 .
 
-. 511
+. 513
 
 2 Reliability Test Cases
 
+~~~
 2.1 Stress .
 
 .
@@ -2506,10 +2532,11 @@ Functional
 
 .
 
-. 530
+. 532
 
 3 User Test Cases
 
+~~~
 3.1 Home app .
 
 .
@@ -2610,8 +2637,9 @@ Functional
 
 .
 
-. 537
+. 539
 
+~~~
 3.2 App for In-Field Provisioning through Software Authentication .
 
 .
@@ -2660,8 +2688,9 @@ Functional
 
 .
 
-. 538
+. 540
 
+~~~
 3.3 App with full HomeKit API Support .
 
 .
@@ -2738,8 +2767,9 @@ Functional
 
 .
 
-. 539
+. 541
 
+~~~
 3.4 App with limited HomeKit API Support
 
 .
@@ -2814,8 +2844,9 @@ Functional
 
 .
 
-. 546
+. 548
 
+~~~
 3.5 App Not Required .
 
 .
@@ -2908,7 +2939,7 @@ Functional
 
 .
 
-. 547
+. 549
 
 4 Revision History
 
@@ -2924,6 +2955,7 @@ LICENSE AGREEMENT. ALL OTHER USE SHALL BE AT APPLEʼS SOLE DISCRETION.
 
 Protocol Test Cases
 
+~~~
 1.1 Functional
 
 TCF001: Accessory must support a MFi authentication mechanism.
@@ -3017,6 +3049,8 @@ TCF054: Accessories must stop advertising within 10 minutes of the last pairing 
 sories must require a user action such as a power cycle, reset, button press or other explicit user action for the accessory to
 re-enter pairing mode and advertise as an unpaired accessory.
 
+TCF055: Verify that the last admin pairing removal and advertising unpaired documentation was submitted to the MFi portal.
+
 TCF001 Accessory must support a MFi authentication mechanism.
 
 Applies to all accessories. Perform this test case automatically with HCA. Below are steps that can be used
@@ -3068,11 +3102,9 @@ Select the new accessory instance and then successfully complete the WAC procedu
 7. Verify HAT is no longer able to communicate with the accessory using the old accessory instance in
 the left sidebar, which had the original Device ID found in step 2.
 
-!!!
-TCF003 When submitting materials for Accessory Compliance Verification, the Licensee must provide instruc-
+TCF003 When submitting materials for Accessory Compliance Verification, the Licensee must provide instruc-
 tions for performing a firmware update on the Accessory Compliance Questionnaire. Licensee must also
-
-provide samples that can receive a firmware update and meet all other requirements specified by the
+provide samples that can receive a firmware update and meet all other requirements specified by the
 Packing List.
 
 Applies to all accessories.
@@ -3130,9 +3162,9 @@ Applies to accessories that support setup via NFC or QR code.
 
 3. Add accessory.
 
-4. Scan QR code or NFC code.
+4. Scan QR code or NFC code.
 
-5. Verify accessory can be successfully added to home using feature-complete app or Home app to scan
+5. Verify accessory can be successfully added to home using feature-complete app or Home app to scan
 QR code or NFC code.
 
 6.
@@ -3193,10 +3225,10 @@ In the left sidebar, select Controller 2, and the accessory name, then select th
 5. Select the accessory name under Controller 2 and enable notifications on all characteristics that sup-
 port them.
 
-6. From Controller 2, write to characteristics supporting paired write and notification permissions using
+6. From Controller 2, write to characteristics supporting paired write and notification permissions using
 the characteristicʼs current value (e.g. if the value is currently 11, write 11).
 
-7. Verify that the accessory does not send notifications to Controller 1 when state changes have not
+7. Verify that the accessory does not send notifications to Controller 1 when state changes have not
 occurred.
 
 !!!
@@ -3253,11 +3285,11 @@ Applies to accessories with an ”on” characteristic. Perform this test case w
 
 In the Summary panel, select the “Disconnect” button.
 
-3. Power cycle the accessory.
+3. Power cycle the accessory.
 
 4. Discover the accessory.
 
-5. Read the “on” characteristic.
+5. Read the “on” characteristic.
 
 6. Verify that the “on” characteristic matches the state of the accessory.
 
@@ -3312,12 +3344,12 @@ the Home app on iOS.
 2. For each service that contains “target state” and “current state” characteristics, rapidly write different
 values to the “target state” characteristic 10 times using the Home app.
 
-3. Verify the “current state” characteristic always matches the physical state of the accessory.
+3. Verify the “current state” characteristic always matches the physical state of the accessory.
 
 4. Verify the “target state” characteristic value is eventually reflected in both the “current state” charac-
 teristic and the physical accessory state.
 
-Repeat this test multiple times with multiple units.
+Repeat this test multiple times with multiple units.
 
 !!!
 TCF033 Accessory must handle multiple admin controllers.
@@ -3375,13 +3407,14 @@ HAP Traffic trace view and see the Write response details.
 
 14. For HAP over BLE and HAP over Thread accessories, verify accessory responds with 0x00 (Success).
 For HAP over BLE accessories, go to the HAP Transactions trace view and see the Write response
-details. For HAP over Thread accessories, go to the HAP Traffic trace view and see the Write response
+
+details. For HAP over Thread accessories, go to the HAP Traffic trace view and see the Write response
 details.
 
 15. Under Controller 4, select the accessory name. Under “Add Additional Controllers” panel, select “Con-
 troller 5” as Controller. Check the box ‘onʼ for Admin and select the “Add Controller” button.
 
-16. Verify that accessory rejects the pairing request with the following: TLV8 error: Type 0x07 (Error),
+16. Verify that accessory rejects the pairing request with the following: TLV8 error: Type 0x07 (Error),
 Value: 2 (kTLVError_Authentication) <070102>. For HAP over Wi-Fi or Ethernet accessories, go to the
 HTTP trace view and see the HTTP response details. For HAP over BLE accessories, go to the HAP
 Procedures trace view and see the Write response details. For HAP over Thread accessories, go to the
@@ -3429,7 +3462,7 @@ paired.
 26. Under Controller 3, select the accessory name, under “Remove Additional Controllers” panel, select
 “Controller 2” as Controller and select the “Remove Controller” button.
 
-27. Verify Controller 3 was able to successfully remove Controller 2. Status flag should display: 0x00,
+27. Verify Controller 3 was able to successfully remove Controller 2. Status flag should display: 0x00,
 paired.
 
 28.
@@ -3440,7 +3473,7 @@ In the Controllers window, under the “Pairing” panel, select the “List Pai
 
 In the Events view, select the response to the request, and then select “Details” to show the details.
 
-30. Verify the accessory has 2 pairings.
+30. Verify the accessory has 2 pairings.
 
 31. Under Controller 3, select the accessory name. Under the “Pairing” panel, select the “Remove Con-
 troller” button.
@@ -3484,56 +3517,67 @@ In the Controllers window, under the “Pairing” panel, select the “List Pai
 response to List Pairings completed. Verify in the details of List Pairings Completed that Controller 2
 does not have the admin bit set (i.e., permissions set to 0).
 
-5. On the left pane of the Controllers window, select the accessory name under Controller 2, select “Start”
+5. For BLE accessories, under Controller 1, select “Disconnect”.
+
+6. On the left pane of the Controllers window, select the accessory name under Controller 2, select “Start”
 button, and select “Discover” button.
 
-6.
+7.
 
 In the Controllers window, under the “Pairing” panel, select the “List Pairings” button.
 
-7. Verify that accessory rejects the list pairing request with the following: TLV8 error: Type 0x07 (Error),
+8. Verify that accessory rejects the list pairing request with the following: TLV8 error: Type 0x07 (Error),
 Value: 2 (kTLVError_Authentication) <070102>. For HAP over Wi-Fi or Ethernet accessories, go to the
-HTTP trace view and see the HTTP response details. For HAP over BLE accessories, go to the HAP
+
+HTTP trace view and see the HTTP response details. For HAP over BLE accessories, go to the HAP
 Procedures trace view and see the Write response details. For HAP over Thread accessories, go to the
 HAP Traffic trace view and see the Write response details.
 
-8. For HAP over BLE and HAP over Thread accessories, verify accessory responds with 0x00 (Success).
+9. For HAP over BLE and HAP over Thread accessories, verify accessory responds with 0x00 (Success).
 For HAP over BLE accessories, go to the HAP Transactions trace view and see the Write response
 details. For HAP over Thread accessories, go to the HAP Traffic trace view and see the Write response
 details.
 
-9. Under Controller 1, select the accessory name. Under “Add Additional Controllers” panel, select “Con-
+10. For BLE accessories, under Controller 2, select “Disconnect”.
+
+11. Under Controller 1, select the accessory name. Under “Add Additional Controllers” panel, select “Con-
 troller 2” as Controller. Check the box ‘onʼ for Admin and select the “Add Controller” button.
 
-10.
+12.
 
 In the Controllers window, under the “Pairing” panel, select the “List Pairings” button. See accessoryʼs
 response to List Pairings completed. Verify in the details of List Pairings Completed that Controller 2
 does have the admin bit set (i.e., permissions set to 1).
 
-11. On the left pane of the Controllers window, select the accessory name under Controller 2. Under the
+13. For BLE accessories, under Controller 1, select “Disconnect”.
+
+14. On the left pane of the Controllers window, select the accessory name under Controller 2. Under the
 “Pairing” panel, select the “List Pairings” button.
 
-12. Verify List Pairing is completed. Verify in the details of List Pairings Completed that both Controller 1
+15. Verify List Pairing is completed. Verify in the details of List Pairings Completed that both Controller 1
 and Controller 2 do have the admin bit set (i.e., permissions set to 1).
 
-13. Under Controller 1, select the accessory name. Under “Add Additional Controller” panel, select Con-
+16. For BLE accessories, under Controller 2, select “Disconnect”.
+
+17. Under Controller 1, select the accessory name. Under “Add Additional Controller” panel, select Con-
 troller 2 as Controller. Uncheck the the Admin box and select the “Add Controller” button.
 
-14.
+18.
 
 In the Controllers window, under the “Pairing” panel, select the “List Pairings” button. See accessoryʼs
 response to List Pairings completed. Verify in the details of List Pairings Completed that Controller 2
 does not have the admin bit set (i.e., permissions set to 0).
 
-15. From Controller 2, under the “Pairing” panel, select the “List Pairings” button.
+19. For BLE accessories, under Controller 1, select “Disconnect”.
 
-16. Verify that accessory rejects the list pairing request with the following: TLV8 error: Type 0x07 (Error),
+20. From Controller 2, under the “Pairing” panel, select the “List Pairings” button.
+
+21. Verify that accessory rejects the list pairing request with the following: TLV8 error: Type 0x07 (Error),
 Value: 2 (kTLVError_Authentication) <070102>. For For HAP over Wi-Fi or Ethernet accessories, go
 to the HTTP trace view and see the HTTP response details. For HAP over BLE accessories, go to the
 HAP Procedures trace view and see the Write response details.
 
-17. For HAP over BLE and HAP over Thread accessories, verify accessory responds with 0x00 (Success).
+22. For HAP over BLE and HAP over Thread accessories, verify accessory responds with 0x00 (Success).
 For HAP over BLE accessories, go to the HAP Transactions trace view and see the Write response
 details. For HAP over Thread accessories, go to the HAP Traffic trace view and see the Write response
 details.
@@ -3544,7 +3588,7 @@ setup code, it must not be manufactured with a setup code in any form (i.e., ins
 or on accessory itself), it must generate a new setup code each time it is needed and it must generate
 setup codes from a cryptographically secure random number generator.
 
-Applies to accessories that have a mechanism to display a dynamic setup code and do not support setup via
+Applies to accessories that have a mechanism to display a dynamic setup code and do not support setup via
 QR Code or NFC. Perform this test case with HAT using the steps below.
 
 1.
@@ -3568,7 +3612,7 @@ In the Summary panel, select the “Disconnect” button.
 
 7. Verify that the new displayed setup code differs from step 3.
 
-8. Verify that accessory has not been manufactured with a pairing code fixed to the physical device or
+8. Verify that accessory has not been manufactured with a pairing code fixed to the physical device or
 printed on any documentation or packaging.
 
 !!!
@@ -3603,8 +3647,7 @@ Applies to accessories that support setup via NFC. Perform this test case using 
 
 4. Verify pairing completes successfully, and accessory is added to the home.
 
-!!!
-TCF041 The Setup ID is persistent across reboots and factory reset of the accessory. This identifier must be
+TCF041 The Setup ID is persistent across reboots and factory reset of the accessory. This identifier must be
 different than the DeviceID, serial number, model or accessory name and must be random and unique for
 each accessory instance manufactured by an accessory manufacturer.
 
@@ -3613,53 +3656,58 @@ steps below.
 
 1. Begin pairing with accessory in HAT using Companion app.
 
-2. After scanning the payload in Companion, note the last 4 digits of the setup payload. Verify the Setup ID
-differs from the DeviceID, serial number, model or accessory name, and is random for each accessory
-instance manufactured by accessory manufacturer.
+2. Select Continue to send the payload to HAT.
 
-3. Select Continue to send the payload to HAT.
+3. Verify pair-setup completes successfully.
 
-4. Verify pair-setup completes successfully.
+4. Go to the events view in the HAT trace, select “Setup Payload”, and locate the “Setup ID” in the details
+view.
 
-5. Remove pairing from the accessory.
+5. Verify the Setup ID differs from the DeviceID, serial number, model or accessory name, and is random
+for each accessory instance manufactured by accessory manufacturer.
 
-6.
+6. Remove pairing from the accessory.
+
+7.
 
 If applicable, perform user action such as button press, reboot etc., for accessory to begin advertising
 as unpaired.
 
-7. Begin pairing with accessory in HAT using Companion app.
-
-8. After scanning the payload in Companion, verify that last 4 digits of the setup payload match the 4
-digits noted in step 2.
+8. Begin pairing with accessory in HAT using Companion app.
 
 9. Select Continue to send the payload to HAT.
 
-10. Verify pair-setup completes successfully.
+10. Go to the events view in the HAT trace, select “Setup Payload”, and locate the “Setup ID” in the details
+view.
 
-11. Factory reset accessory.
+11. Verify the Setup ID matches the Setup ID from step 5.
 
-12.
+12. Verify pair-setup completes successfully.
+
+13. Factory reset accessory.
+
+14.
 
 If applicable, perform user action such as button press, reboot etc., for accessory to begin advertising
 as unpaired.
 
-13. Begin pairing with accessory in HAT using Companion app.
+15. Begin pairing with accessory in HAT using Companion app.
 
-14. After scanning the payload in Companion, verify that last 4 digits of the setup payload match the 4
-digits noted in step 2.
+16. Select Continue to send the payload to HAT.
 
-15. Select Continue to send the payload to HAT.
+17. Go to the events view in the HAT trace, select “Setup Payload”, and locate the “Setup ID” in the details
+view.
 
-16. Verify pair setup completes successfully.
+18. Verify the Setup ID matches the Setup ID from step 5.
+
+19. Verify pair setup completes successfully.
 
 !!!
 TCF042 Accessories must not allow payloads to be written to their NFC tags via NDEF.
 
 Applies to accessories that support setup via NFC. Perform this test case using HCA.
 
-!!!
-TCF043 Programmable NFC tags must leave pairing mode after 5 minutes of inactivity, and move to “Not in pairing
+TCF043 Programmable NFC tags must leave pairing mode after 5 minutes of inactivity, and move to “Not in pairing
 mode”. The accessory must require users to explicitly trigger NFC pairing mode via a physical interaction
 on the accessory. Pair-setup can still be allowed after the 5 minute timer expires. Accessories imple-
 menting programmable NFC must not implicitly be ready to pair once all pairings have been removed.
@@ -3685,7 +3733,7 @@ steps below.
 
 9. Remove accessory from the home. Do not place the accessory into pairing mode.
 
-10. Using the Home App, attempt to add accessory to the home by scanning NFC tag.
+10. Using the Home App, attempt to add accessory to the home by scanning NFC tag.
 
 11. Verify the Home App shows the “accessory is not ready” screen.
 
@@ -3714,7 +3762,7 @@ Applies to all accessories. Perform this test case with HAT using the steps belo
 
 3. Launch the Companion app on iOS device.
 
-4. Find your Companion app and select either QR Code or NFC.
+4. Find your Companion app and select either QR Code or NFC.
 
 5. For NFC, hold iOS device near accessory. For QR code, scan the QR code.
 
@@ -3747,7 +3795,7 @@ In the Controllers window, under Pairing panel, select the “Start Pairing” b
 
 In Pairing panel, select the Start Pairing button.
 
-6. Enter the setup code and select the send button or pair using the Companion app.
+6. Enter the setup code and select the send button or pair using the Companion app.
 
 7. Verify pair-setup completes successfully.
 
@@ -3783,7 +3831,7 @@ sponds.
 
 In the Summary panel, select the “Disconnect” button.
 
-5. Remove the ethernet cable connected to the router ʼs WAN port, disconnect modem, or remove coaxial
+5. Remove the ethernet cable connected to the router ʼs WAN port, disconnect modem, or remove coaxial
 cable from modem/router combination to disable internet access.
 
 6. Power cycle the accessory.
@@ -3809,7 +3857,7 @@ TCF054 Accessories must stop advertising within 10 minutes of the last pairing a
 state. Accessories must require a user action such as a power cycle, reset, button press or other explicit
 user action for the accessory to re-enter pairing mode and advertise as an unpaired accessory.
 
-Applies to accessories that support HomeKit Accessory Protocol specification R16 or later. Perform this test
+Applies to accessories that support HomeKit Accessory Protocol specification R16 or later. Perform this test
 case with HAT using the steps below.
 
 1. Factory reset accessory.
@@ -3846,7 +3894,7 @@ In the left sidebar of the Controllers window, select the accessory and then sel
 12. After the pairing prompt appears, select “Stop” to dismiss the pairing prompt and to abort the pairing
 process.
 
-13. Select the “Disconnect” button.
+13. Select the “Disconnect” button.
 
 14. Wait 10 minutes.
 
@@ -3874,7 +3922,7 @@ In the left sidebar of the Controllers window, select the accessory and then sel
 23. Select the controller and then select the “Stop” button to stop discovering accessory servers. Then
 select “Start” to begin again.
 
-24. Using the Trace window, verify the accessory is no longer advertising.
+24. Using the Trace window, verify the accessory is no longer advertising.
 
 25. Place the accessory back into pairing mode by performing a power cycle, reset, button press or other
 explicit user action.
@@ -3907,6 +3955,15 @@ select “Start” to begin again.
 
 35. Using the Trace window, verify the accessory is no longer advertising.
 
+TCF055 Verify that the last admin pairing removal and advertising unpaired documentation was submitted to the
+MFi portal.
+
+Applies to all accessories.
+
+1. Attach directions to the Accessory Compliance Questionnaire on the MFi portal that explains how to
+put the accessory back in advertising unpaired mode when last admin pairing is removed.
+
+~~~
 1.2 HomeKit-enabled Wi-Fi routers
 
 TCSR001: Verify HomeKit can be enabled on the router accessory via the manufactureʼs app while the iOS device is connected
@@ -9950,6 +10007,7 @@ In the Client Identifier field, enter “1” to reset the network access violat
 37. Router should send the event notification for the Network Access Violation with the Client Profile Iden-
 tifier of the ADK accessory.
 
+~~~
 1.3 HAP
 
 TCH001: Accessory must have a single Accessory Information Service that includes the required characteristics.
@@ -11329,6 +11387,8 @@ on the accessory, these services should be marked as hidden. When all characteri
 marked hidden then the service is also implicitly marked as hidden.
 
 Applies to all accessories. Perform this test case with HAT using the steps below.
+
+Not required for Apple defined Firmware Update services and characteristics.
 
 1. Pair and discover accessory.
 
@@ -12754,6 +12814,7 @@ value.
 15. Repeat step 3-14 for each Light Bulb service that supports “Hue” and “Saturation” along with the
 “Color Temperature” characteristic.
 
+~~~
 1.4 Stateless Programmable Switch
 
 TCSPS001: Verify that the correct Stateless Programmable Switch button press event is sent with each button press type.
@@ -12934,6 +12995,7 @@ In the “Events” traffic view of the Trace window, verify the accessory does 
 tions for the non-supported HomeKit button presses. e.g. a triple press event should not send any
 notifications to the HomeKit controller(s).
 
+~~~
 1.5 Accessory Runtime Information Service
 
 TCAR001: Verify that the accessory contains the “Accessory Runtime Information” service and includes the required charac-
@@ -13041,6 +13103,7 @@ cessfully and without error.
 
 9. Under the “Connection” panel, select “Disable Ping”.
 
+~~~
 1.6 Irrigation System
 
 TCIS001: When the irrigation system is enabled, the Active characteristic on the Irrigation Service service must be set to “1”.
@@ -13224,6 +13287,7 @@ set in step 5 that it expired.
 
 12. Repeat steps 3-11 for all valves.
 
+~~~
 1.7 Faucet
 
 TCFT001: If an accessory has a Heater Cooler service linked to a single Valve service, or if an accessory has multiple linked
@@ -13367,6 +13431,7 @@ Cooler service. Perform this test case with HAT using the steps below.
 
 6. Verify Notification received for Heater Cooler Service Active Characteristic value of “0”.
 
+~~~
 1.8 Window Service, Window Covering Service, Door Service
 
 TCBW001: Verify that the accessory correctly sends event notifications for the “Target Position”, “Current Position” and “Po-
@@ -13609,6 +13674,7 @@ Position” with the value equal to the position it stopped at. If the accessory
 non-HAP controller, verify an Event Notification is received for “Position State” with a value of “2”
 (Stopped), and for the “Current Position” and “Target Position” with the updated position values.
 
+~~~
 1.9 Valve
 
 TCV001: A bridge consisting of multiple Valve endpoints must include the following characteristic within each Valve service:
@@ -13720,6 +13786,7 @@ using the steps below.
 
 3. Read each instance of the Is Configured characteristic and verify the proper value is returned.
 
+~~~
 1.10 Software Token-Based Authentication
 
 TCSTA001: Verify that the accessory successfully updates to HomeKit-compatible firmware and can be paired (and subse-
@@ -14214,6 +14281,7 @@ and then select “Remove Pairing”.
 
 30. Repeat steps 1-9, and verify that the UUID and Token matches the UUID and Token used in step 14.
 
+~~~
 1.11 Remotes for Apple TV
 
 TCRC001: Verify that the Siri service is linked to the Audio Stream Management and Data Stream Management services.
@@ -14843,6 +14911,7 @@ remotes.
 
 If the value is “0” for software based, verify the Siri service is not included.
 
+~~~
 1.12 IP
 
 TCI005: The minimum number of pairing relationships that an accessory must support is 16.
@@ -15838,8 +15907,6 @@ change the state of the characteristic several times (e.g., toggle switch on/off
 In the Bonjour traffic view, select the most recent Bonjour advertisement and open the details sidebar.
 Verify the s# has incremented by at least one and is greater than the value in step 20.
 
-24. Remove pairings from the accessory using HAT.
-
 !!!
 TCI050 Accessories must respond to all requests within 10 seconds.
 
@@ -15875,6 +15942,7 @@ In the HTTP traffic view, locate the Pair Verify Requests/Responses, and select 
 9. Verify that the Pair Verify procedure, from state value 1 (M1) through state value 4 (M4), completes
 within 10 seconds.
 
+~~~
 1.13 IP Timed Write
 
 TCITW001: An accessory must support timed writes to all characteristics even if the characteristic does not require it.
@@ -15910,6 +15978,7 @@ TCITW001 An accessory must support timed writes to all characteristics even if t
 it.
 
 Applies to HAP over Ethernet or Wi-Fi accessories that support protocol version 1.1 or later. Protocol version
+~~~
 1.1 is required by HomeKit Accessory Specification R10 and later. Perform this test case automatically with
 HCA. Below are steps that can be used to perform this test case manually in HAT.
 
@@ -15934,6 +16003,7 @@ In the Execute Write Panel, Set PID to 111. Enter a value and select Execute wri
 TCITW002 Prepare-write with PID 111. Prepare-write with PID 222. Execute-write with PID 222.
 
 Applies to HAP over Ethernet or Wi-Fi accessories that support protocol version 1.1 or later. Protocol version
+~~~
 1.1 is required by HomeKit Accessory Specification R10 and later. Perform this test case automatically with
 HCA. Below are steps that can be used to perform this test case manually in HAT.
 
@@ -15961,6 +16031,7 @@ In the Execute Write Panel, Set PID to 222. Enter a value and select Execute wri
 TCITW003 Prepare-write with PID 111. Prepare-write with PID 222. Execute-write with PID 111.
 
 Applies to HAP over Ethernet or Wi-Fi accessories that support protocol version 1.1 or later. Protocol version
+~~~
 1.1 is required by HomeKit Accessory Specification R10 and later. Perform this test case automatically with
 HCA. Below are steps that can be used to perform this test case manually in HAT.
 
@@ -15990,6 +16061,7 @@ In the Execute Write Panel, Set PID to 111. Enter a value and select Execute wri
 TCITW004 Prepare-write with PID 111. Wait for TTL to expire. Prepare-write with PID 111. Execute-write with PID 111.
 
 Applies to HAP over Ethernet or Wi-Fi accessories that support protocol version 1.1 or later. Protocol version
+~~~
 1.1 is required by HomeKit Accessory Specification R10 and later. Perform this test case automatically with
 HCA. Below are steps that can be used to perform this test case manually in HAT.
 
@@ -16016,6 +16088,7 @@ In the Execute Write Panel, Set PID to 111. Enter a value and select Execute wri
 TCITW005 Execute-write with PID 111 without Prepare-write.
 
 Applies to HAP over Ethernet or Wi-Fi accessories that support protocol version 1.1 or later. Protocol version
+~~~
 1.1 is required by HomeKit Accessory Specification R10 and later. Perform this test case automatically with
 HCA. Below are steps that can be used to perform this test case manually in HAT.
 
@@ -16037,6 +16110,7 @@ In the Execute Write Panel, Set PID to 111. Enter a value and select Execute wri
 TCITW006 Prepare-write with PID 222. Execute-write with PID 111.
 
 Applies to HAP over Ethernet or Wi-Fi accessories that support protocol version 1.1 or later. Protocol version
+~~~
 1.1 is required by HomeKit Accessory Specification R10 and later. Perform this test case automatically with
 HCA. Below are steps that can be used to perform this test case manually in HAT.
 
@@ -16062,6 +16136,7 @@ In the Execute Write Panel, Set PID to 111. Enter a value and select Execute wri
 TCITW007 Prepare-write with PID 111. Execute-write with PID 111. Execute-write with PID 111.
 
 Applies to HAP over Ethernet or Wi-Fi accessories that support protocol version 1.1 or later. Protocol version
+~~~
 1.1 is required by HomeKit Accessory Specification R10 and later. Perform this test case automatically with
 HCA. Below are steps that can be used to perform this test case manually in HAT.
 
@@ -16093,6 +16168,7 @@ In the Execute Write Panel, Set PID to 111. Enter a value and select Execute wri
 status error code -70410 (HAPIPStatusErrorCodeInvalidWrite).
 
 Applies to HAP over Ethernet or Wi-Fi accessories that support protocol version 1.1 or later. Protocol version
+~~~
 1.1 is required by HomeKit Accessory Specification R10 and later. Perform this test case automatically with
 HCA. Below are steps that can be used to perform this test case manually in HAT.
 
@@ -16117,6 +16193,7 @@ TCITW009 If the accessory receives a standard write request on a characteristic 
 accessory must respond with HAP status error code -70410 (HAPIPStatusErrorCodeInvalidWrite).
 
 Applies to HAP over Ethernet or Wi-Fi accessories that support protocol version 1.1 or later. Protocol version
+~~~
 1.1 is required by HomeKit Accessory Specification R10 and later. Perform this test case automatically with
 HCA. Below are steps that can be used to perform this test case manually in HAT.
 
@@ -16136,6 +16213,7 @@ In Controllers window, select a characteristic that requires timed-write.
 TCITW010 The accessory receives consecutive Prepare Write Requests in the same session.
 
 Applies to HAP over Ethernet or Wi-Fi accessories that support protocol version 1.1 or later. Protocol version
+~~~
 1.1 is required by HomeKit Accessory Specification R10 and later. Perform this test case automatically with
 HCA. Below are steps that can be used to perform this test case manually in HAT.
 
@@ -16165,6 +16243,7 @@ In the Execute Write Panel, Set PID to 111. Enter a value and select Execute wri
 TCITW011 From Controller 1, Prepare-write with PID 111. From Controller 2, Execute-write with PID 111.
 
 Applies to HAP over Ethernet or Wi-Fi accessories that support protocol version 1.1 or later. Protocol version
+~~~
 1.1 is required by HomeKit Accessory Specification R10 and later. Perform this test case automatically with
 HCA. Below are steps that can be used to perform this test case manually in HAT.
 
@@ -16204,6 +16283,7 @@ Set PID to 111. Enter a value and select Execute write. (i.e turn on light)
 TCITW012 Prepare-write on 8 controllers. Execute-write on each controller.
 
 Applies to HAP over Ethernet or Wi-Fi accessories that support protocol version 1.1 or later. Protocol version
+~~~
 1.1 is required by HomeKit Accessory Specification R10 and later. Perform this test case automatically with
 HCA. Below are steps that can be used to perform this test case manually in HAT.
 
@@ -16322,6 +16402,7 @@ Set PID to 111. Enter a value and select Execute write. (i.e turn off light)
 TCITW013 Prepare-write with PID 111. Disconnect HTTP connection. Pair verify and Execute-write with PID 111.
 
 Applies to HAP over Ethernet or Wi-Fi accessories that support protocol version 1.1 or later. Protocol version
+~~~
 1.1 is required by HomeKit Accessory Specification R10 and later. Perform this test case automatically with
 HCA. Below are steps that can be used to perform this test case manually in HAT.
 
@@ -16347,6 +16428,7 @@ In the Execute Write Panel, Set PID to 111. Enter a value and select Execute wri
 
 8. Verify that the accessory responds with the HAP status code “-70410.”
 
+~~~
 1.14 Wi-Fi Accessory Configuration 2
 
 TCW001: Verify that the accessory can join a dual-band 2.4 GHz and 5 GHz WPA2 Access Point via WAC2.
@@ -16589,6 +16671,7 @@ In the WAC Discovery traffic view, select the accessoryʼs most recent WAC adver
 
 13. Verify “Device is paired to a HomeKit Controller flag (Bit 9)” is listed.
 
+~~~
 1.15 Product Plan
 
 TCPP001: Verify Accessory Network Declarations. HAP over Wi-Fi or Ethernet accessories must have their network services
@@ -16674,6 +16757,7 @@ teristic.
 10. Verify that the Firmware Revision value matches the value assigned to this accessoryʼs Product Plan
 on the MFi Portal.
 
+~~~
 1.16 Bluetooth
 
 TCB001: Accessory must expose a single instance of the Pairing Service with the following required characteristics: Pair Setup,
@@ -17600,6 +17684,7 @@ message is seen immediately.
 In the HAP Procedures view, verify accessory does not respond to the read request and that a Discon-
 nect message is seen immediately.
 
+~~~
 1.17 IP Cameras
 
 TCICF004: Ensure the IP Camera stream starts successfully and that video is received after stop and re-starting streaming.
@@ -20136,6 +20221,7 @@ R16 or later
 
 R16 or later
 
+~~~
 1.18 Video Doorbell
 
 TCVD001: Any Doorbell service must include the required characteristics.
@@ -20647,6 +20733,7 @@ In left sidebar of Controllers window, see each of accessoryʼs services.
 
 If the accessory supports Camera Event Recording, verify the optional services are included.
 
+~~~
 1.19 Camera Event Recording
 
 Before performing each test within this section, it is important to ensure the accessoryʼs characteristics are set to the proper
@@ -20919,7 +21006,7 @@ read audioCodecRecordingParameters.
 8. Navigate to Data Stream Transport Management service and select Send Start Command, then select
 Connect.
 
-9. Enter in the same integer in both Stream ID fields under Camera Recording.
+9. Enter the same integer in both Stream ID fields under Camera Recording.
 
 10. Select Send Start Request.
 
@@ -21744,7 +21831,7 @@ and the bitRate value from the read audioCodecRecordingParameters.
 17. Select the “Write” button in the Write TLV panel.
 
 18. Verify that the accessory sends a notification to Controller 2 that the Selected Video Recording Con-
-figuration has been updated with the new configuration from step 15.
+figuration has been updated with the new configuration from step 16.
 
 19. Verify that by using the HDS trace view the accessory continues to send data to the controller.
 
@@ -21755,7 +21842,7 @@ figuration has been updated with the new configuration from step 15.
 22. Select Save Recording.
 
 23. Open and view the recording and verify that it is playable and is at the correct selected resolution of
-1920x1080 (or other 1080p-equivalent select in Step 8).
+1920x1080 (or other 1080p-equivalent select in Step 9).
 
 24. Navigate to the Data Stream Transport Management service and select Send Start Command, then
 choose Connect.
@@ -21771,7 +21858,7 @@ choose Connect.
 29. Select Save Recording.
 
 30. Open and view the recording and verify that it is playable and is at the newly selected resolution of
-1280x720 (or other 720p-equivalent select in Step 15).
+1280x720 (or other 720p-equivalent select in Step 16).
 
 31. Remove all pairings from the accessory via HAT.
 
@@ -22005,47 +22092,47 @@ steps below.
 
 2. Discover the accessoryʼs services and characteristics.
 
-3. Read the Supported Audio Recording Configuration characteristic. In the Details view of the Charac-
+3. Set the “HomeKit Camera Active” characteristic to “0” (Off).
+
+4. Set the Active characteristic associated to the “Camera Event Recording Management” service to “0”
+(Inactive) with a timed write.
+
+5. Verify that the LED is Off.
+
+6. Set the “HomeKit Camera Active” characteristic to “1” (On).
+
+7. Set the “Active” characteristic associated to the “Camera Event Recording Management” service to
+“1” (Active) with a timed write.
+
+8. Verify that the LED is Red.
+
+9. Set the “Active” characteristic associated to the “Camera Event Recording Management” service to
+“0” (Inactive) with a timed write.
+
+10. Verify that the LED is Blue.
+
+11. Select the “Camera RTP Stream Management” service.
+
+12. Select the “Select Stream Parameters” button, select supported parameters, then select “Configure”.
+
+13. Select“Negotiate” and “Start Streaming”.
+
+14. Verify that the LED is Red.
+
+15. Select “Stop Streaming”.
+
+16. Verify that the LED is Blue.
+
+17. Set the “Active” characteristic associated to the “Camera Event Recording Management” service to
+“1” (Active) with a timed write.
+
+18. Read the Supported Audio Recording Configuration characteristic. In the Details view of the Charac-
 teristic Read Completed, note the bitRate under the audioCodecRecordingParameters.
 
-4. Configure the accessory to record by using the Build TLV button associated with the “Selected Camera
+19. Configure the accessory to record by using the Build TLV button associated with the “Selected Camera
 Recording Configuration” characteristic, using a 4000msec prebuffer duration, 4000msec fragment
 duration, 800kbps video bit rate, 4000 i-Frame Rate Interval, and the bitRate value from the read
 audioCodecRecordingParameters.
-
-5. Set the “HomeKit Camera Active” characteristic to “0” (Off).
-
-6. Set the Active characteristic associated to the “Camera Event Recording Management” service to “0”
-(Inactive) with a timed write.
-
-7. Verify that the LED is Off.
-
-8. Set the “HomeKit Camera Active” characteristic to “1” (On).
-
-9. Set the “Active” characteristic associated to the “Camera Event Recording Management” service to
-“1” (Active) with a timed write.
-
-10. Verify that the LED is Red.
-
-11. Set the “Active” characteristic associated to the “Camera Event Recording Management” service to
-“0” (Inactive) with a timed write.
-
-12. Verify that the LED is Blue.
-
-13. Select the “Camera RTP Stream Management” service.
-
-14. Select the “Select Stream Parameters” button, select supported parameters, then select “Configure”.
-
-15. Select“Negotiate” and “Start Streaming”.
-
-16. Verify that the LED is Red.
-
-17. Select “Stop Streaming”.
-
-18. Verify that the LED is Blue.
-
-19. Set the “Active” characteristic associated to the “Camera Event Recording Management” service to
-“1” (Active) with a timed write.
 
 20. Select the “Write” button in the Write TLV panel.
 
@@ -23853,8 +23940,9 @@ the table.
 • Attempt to start a recording with unsupported resolution, and verify that the accessory responds
 with “HTTP 207” with HAP status code “70410”.
 
-Verify for each of the following combinations (mandatory resolutions are required for aspect ratios advertised
-by the accessory):
+Verify each of the following resolutions is supported for aspect ratios advertised by the accessory. A test
+case from below table is applicable to a camera accessory only if it supports the corresponding aspect ratio
+and advertises it. If a camera does not support the aspect ratio, the test can be skipped:
 
 Table 1.10: Test Cases for IP Camera Audio and Video recording requirements
 Resolution
@@ -24106,10 +24194,8 @@ Highest Supported
 3(cid:1113)4
 
 Table 1.11: Mandatory IP Camera Audio and Video recording requirements (mandatory resolutions are required for aspect ratios
-advertised by the accessory)
-
+advertised by the accessory - If a camera does not support the aspect ratio, the test can be skipped)
 Test Case
-
 Requirement
 
 TCR101
@@ -24136,6 +24222,7 @@ TCR114
 
 Mandatory for R16 or later
 
+~~~
 1.20 HomeKit Data Stream
 
 TCHDS001: Verify that if no message is received before the 10 second timeout, or if the accessory received any other message
@@ -24579,6 +24666,7 @@ Sequence Number” has incremented, verify that the “Data Chunk Sequence Numbe
 
 16. Repeat steps 12-15 for each “Binary Data Event”.
 
+~~~
 1.21 Thread
 
 TCT001: Verify that a thread accessory can be paired over BLE and moved to thread network.
@@ -24772,6 +24860,8 @@ connect to the new network.
 TCT100: When the last pairing has been removed, accessory must change the status flag within 5 seconds after remove pairing
 is completed, and subsequent pairing attempts with accessory must succeed.
 
+TCT101: Verify last admin pairing removal and Thread Credential handling documentation was submitted to the MFi portal.
+
 !!!
 TCT001 Verify that a thread accessory can be paired over BLE and moved to thread network.
 
@@ -24803,12 +24893,11 @@ view of HAT trace.
 covered Accessories” response. Click on the Details button to verify that the response contains Ser-
 vices and Characteristics of the thread accessory.
 
-!!!
-TCT002 Verify that the accessory CoAP application level retries are set to a minimum of 2.
+TCT002 Verify that the accessory CoAP application level retries are set to a minimum of 2.
 
 Applies to accessories using the HAP over Thread transport.
 
-1. Select the “+” at the bottom of left sidebar and select “Create Thread Controller” to make a new virtual
+1. Select the “+” at the bottom of left sidebar and select “Create Thread Controller” to make a new virtual
 Thread controller, Controller 1. In the Summary panel of the controller, click the “Startʼʼ button to begin
 discovering Thread accessories. Repeat this step to create a second Thread controller, Controller 2.
 
@@ -24873,11 +24962,11 @@ In the Queued Writing Panel, select “Enable Queue”.
 
 9. Repeat Steps 7 and 8 to queue two more write actions for characteristics that support paired write.
 
-10.
+10.
 
 In the pop-up window, select the “Send” button to send the queue of requests.
 
-11. Verify in CoAP Traffic view of HAT Trace that the queue is sent as a single CoAP request and receives a
+11. Verify in CoAP Traffic view of HAT Trace that the queue is sent as a single CoAP request and receives a
 single CoAP response. Accessories that sleep have an exception to this - it is acceptable for Sleepy ac-
 cessories to receive CoAP responses for each of the retransmissions attempted by the HAT Controller
 while the accessory is asleep.
@@ -24933,9 +25022,9 @@ process.
 15. Select the controller and then select the “Stop” button to stop discovering accessory servers. Then
 select “Start” to begin again.
 
-16. Using the “Thread Discoveryʼʼ view in the Trace window, verify the accessory is no longer advertising.
+16. Using the “Thread Discoveryʼʼ view in the Trace window, verify the accessory is no longer advertising.
 
-17. Place the accessory back into pairing mode by performing a power cycle, button press or other explicit
+17. Place the accessory back into pairing mode by performing a power cycle, button press or other explicit
 user action.
 
 18. Using the “Thread Discoveryʼʼ view in the Trace window, verify the accessory begins advertising again.
@@ -27339,6 +27428,17 @@ In Controllers window, select “Start Pairing.”
 
 12. Verify that Pair Setup and Pair Verify complete successfully.
 
+!!!
+TCT101 Verify last admin pairing removal and Thread Credential handling documentation was submitted to the
+MFi portal.
+
+Applies to accessories using the HAP over Thread transport.
+
+1. Attach a document to the Accessory Compliance Questionnaire on the MFi portal that explains if the
+accessory on Thread network retains the Thread Credential upon last admin pairing removal, or the
+accessory clears the Thread Credential upon last admin pairing removal and falls back on BLE.
+
+~~~
 1.22 Accessory Diagnostics
 
 TCADX001: Any Diagnostics services must include the required characteristics.
@@ -27676,6 +27776,7 @@ response that has a header that includes “dataSend” as the protocol, “Open
 set to 6 (Protocol Specific Error), ID with a value that matches the ID the controller chose in the Data
 Start Request, and a message with a Status set to “1” (Not allowed).
 
+~~~
 1.23 Light Shift
 
 TCLS001: An accessory supporting the Light Shift feature must include the “Characteristic Value Transition Control” char-
@@ -28169,8 +28270,8 @@ characteristic.
 
 5.
 
-In the sidebar of the Controllers window, select the “Supported Characteristic Value Transition Control”
-characteristic.
+In the sidebar of the Controllers window, select the “Supported Characteristic Value Transition Con-
+figuration” characteristic.
 
 6. Select “Read”.
 
@@ -28423,7 +28524,7 @@ below.
 2.
 
 In the sidebar of the Controllers window, under the “Light Bulb” service, select the “Supported Char-
-acteristic Value Transition Control” characteristic.
+acteristic Value Transition Configuration” characteristic.
 
 3. Select “Read” to read the value.
 
@@ -30426,18 +30527,7 @@ cation for the “Color Temperature” characteristic is received, with continuo
 
 In the sidebar of the Controllers window, select the “Color Temperature” characteristic.
 
-16. Select “Read” five times in quick succession.
-
-17.
-
-In the Events view of Trace, verify that the values contained in each Read Response is different, indi-
-cating the “Color Temperature” is transitioning.
-
-18.
-
-In the sidebar of the Controllers window, select the “Color Temperature” characteristic.
-
-19. Write a value of “300” to abort the current transition.
+16. Write a value of “300” to abort the current transition.
 
 !!!
 TCLS041 For characteristics that support Linear Derived transitions, accessory must assume a “Value Update Time
@@ -30452,14 +30542,14 @@ below.
 2. For HAP over BLE accessories, enable the “Pair Resume Keep Alive” checkbox with a 27-second in-
 terval.
 
-3.
+3.
 
 In the sidebar of the Controllers window, under the “Light Bulb” service, select the “Color Temperature”
 characteristic.
 
 4. Write a value of “300”, then select “Enable” to enable Event Notifications.
 
-5.
+5.
 
 In the sidebar of the Controllers window, select the “Characteristic Value Transition Control” charac-
 teristic.
@@ -30528,7 +30618,7 @@ characteristic.
 In the sidebar of the Controllers window, select the “Characteristic Value Transition Control” charac-
 teristic.
 
-6. Select the “Build TLV” button, and then select the “Transition Start (Presets)” option.
+6. Select the “Build TLV” button, and then select the “Transition Start (Presets)” option.
 
 7.
 
@@ -30536,7 +30626,7 @@ In the “Linear or Linear Derived” menu, choose “Linear Derived”.
 
 8. Set the “Value Update Time Interval” to “120000”.
 
-9. Leave the “Notify Value Change Threshold” and “Notify Time Interval Threshold” fields blank.
+9. Leave the “Notify Value Change Threshold” and “Notify Time Interval Threshold” fields blank.
 
 10.
 
@@ -30606,13 +30696,13 @@ In the “Linear or Linear Derived” menu, choose “Linear Derived”.
 
 In the “End Behavior” menu, choose “Loop”.
 
-11. Set the “Upper Bound” to “100” and the “Lower Bound” to “0”.
+11. Set the “Upper Bound” to “100” and the “Lower Bound” to “0”.
 
 12. Set the “Target Completion Duration Per Point” to “60000”.
 
 13. Set the “Total Number of Transition Points” to “11”.
 
-14. Select “Build TLV”, then select “Write” to write the TLV value.
+14. Select “Build TLV”, then select “Write” to write the TLV value.
 
 15.
 
@@ -30676,7 +30766,7 @@ In the sidebar of the Controllers window, select the “Color Temperature” cha
 
 8. Write a value of “300”, then select “Enable” to enable Event Notifications.
 
-9.
+9.
 
 In the “Characteristic Configuration” panel, enter “1” for broadcast interval and select “Enable Broad-
 cast Notifications”.
@@ -30686,7 +30776,7 @@ cast Notifications”.
 In the sidebar of the Controllers window, select the “Characteristic Value Transition Control” charac-
 teristic.
 
-11. Select the “Build TLV” button, and then select the “Transition Start (Presets)” option.
+11. Select the “Build TLV” button, and then select the “Transition Start (Presets)” option.
 
 12.
 
@@ -30753,7 +30843,7 @@ teristic.
 
 6. Select the “Build TLV” button, and then select the “Transition Start (Presets)” option.
 
-7.
+7.
 
 In the “Linear or Linear Derived” menu, choose “Linear Derived”.
 
@@ -30761,7 +30851,7 @@ In the “Linear or Linear Derived” menu, choose “Linear Derived”.
 
 9. Set the “Notify Time Interval Threshold” to “180000”.
 
-10.
+10.
 
 In the “End Behavior” menu, choose “Loop”.
 
@@ -30826,7 +30916,7 @@ teristic.
 
 9. Select the “Build TLV” button, and then select the “Transition Start (Presets)” option.
 
-10.
+10.
 
 In the “Linear or Linear Derived” menu, choose “Linear Derived”.
 
@@ -30834,7 +30924,7 @@ In the “Linear or Linear Derived” menu, choose “Linear Derived”.
 
 12. Set the “Notify Time Interval Threshold” to “180000”.
 
-13.
+13.
 
 In the “End Behavior” menu, choose “Loop”.
 
@@ -30899,12 +30989,12 @@ light emitted by the accessory.
 
 9. The value should measure 5000K on the light meter.
 
-10. Under the “Color Temperature” characteristic write a value of “227”.
+10. Under the “Color Temperature” characteristic write a value of “227”.
 
 11. Using a light meter, at a distance of about 24 inches, measure the updated “Color Temperature” output
 of the light emitted by the accessory.
 
-12. The value should measure 4400K on the light meter.
+12. The value should measure 4400K on the light meter.
 
 13. Under the “Color Temperature” characteristic write a value of “256”.
 
@@ -30958,12 +31048,13 @@ Transition Control”.
 5. Set the Scale to “0.51”, Offset to “1.01”, Target Completion Duration to “0”, and “Start Delay Duration”
 to “12000”.
 
-6. Create a second transition point with the Scale set to “4.8”, Offset to “1.01”, and Target Completion
+6. Create a second transition point with the Scale set to “4.8”, Offset to “1.01”, and Target Completion
 Duration set to “120000”. Leave the “Start Delay Duration” field blank.
 
 7. Create a third transition point with the Scale set to “9.8”, Offset to “1.01”, Target Completion Dura-
 tion set to “120000”, and leave the “Start Delay Duration” field blank. (If the accessory supports a
-“Color Temperature” greater than this value, change the scale and offset to values that fall outside the
+
+“Color Temperature” greater than this value, change the scale and offset to values that fall outside the
 capabilities of the accessory, e.g., a scale of 15.2 with an offset of 1.01 at 100 percent “Brightness”
 produces a “Color Temperature” of over 1500 mirek.)
 
@@ -31021,7 +31112,7 @@ Derived” menu, choose “Linear and Linear Derived”.
 
 13. Set the “Number of Transition Points” for Linear to “10”
 
-14. Set the “Number of Transition Points” for Linear Derived to “10”
+14. Set the “Number of Transition Points” for Linear Derived to “10”
 
 15. Select “Build TLV”, write the value, and then verify that the accessory accepts the write request.
 
@@ -31030,7 +31121,7 @@ Derived” menu, choose “Linear and Linear Derived”.
 In the Events view of the Trace, verify that the write response contains the “Transition State” for both
 the “Brightness” and “Color Temperature” transitions.
 
-17.
+17.
 
 In the Events view of the Trace, verify that a notification for the “Characteristic Value Active Transition
 Count” characteristic is received, and contains a value of “2”.
@@ -31043,6 +31134,7 @@ Count” characteristic is received, and contains a value of “2”.
 
 21. Read the value and verify it is set to “0”.
 
+~~~
 1.24 Wi-Fi Reconfiguration
 
 TCWR001: Verify accessory can be reconfigured onto a new network using the “Simple Update” procedure.
@@ -32304,6 +32396,7 @@ In the Events view of the trace, verify the write response contains a “Cookie�
 cookie used in step 24, an “updateStatus” cookie that matches the cookie used in step 24, and an
 “Update Status” with bit 19 set (Update Failed). Please note that bits 21 and 22 may also be set.
 
+~~~
 1.25 NFC Access and Pin Code Access Locks
 
 TCL001: Any NFC Access Service must include the required characteristics.
@@ -32390,6 +32483,9 @@ TCL034: Verify that the accessory sends event notification context when on the T
 
 TCL035: Verify that the NFC accessory has Interoperability with iPhone and Watch.
 
+TCL036: Verify that the ephemeral public key and the transaction identifier is updated by the accessory for each NFC trans-
+action.
+
 !!!
 TCL001 Any NFC Access Service must include the required characteristics.
 
@@ -32418,11 +32514,11 @@ In the left sidebar of the Controllers window, see each of the accessoryʼs serv
 
 5. Verify the characteristic has the permission “Paired Read”.
 
-6. Verify the characteristic format is “TLV8”.
+6. Verify the characteristic format is “TLV8”.
 
 7. Verify the service includes the “NFC Access Control” characteristic.
 
-8. Verify the characteristic has the permissions “Paired Read” and “Paired Write”
+8. Verify the characteristic has the permissions “Paired Read” and “Paired Write”
 
 9. Verify the characteristic format is “TLV8”.
 
@@ -32481,13 +32577,13 @@ the “NFC Access ” service.
 
 4. Select “Write with Response” for the NFC Access Control Point characteristic.
 
-5.
+5.
 
 In Write [tlv8] pane, select Build TLV, select Operation Type “List” from the menu, select the NFC
 Access Request Type as “Issuer Key Request”, then select the “Build TLV” button on the bottom of the
 TLV builder and write the TLV.
 
-6. Verify in the Events view of trace, in the Write Response, accessory responds with Issuer Key Identifier
+6. Verify in the Events view of trace, in the Write Response, accessory responds with Issuer Key Identifier
 on TLV Type 1 and a Status Code of 0 (SUCCESS) on TLV Type 2.
 
 7. Copy the Issuer Key Identifier (8 bytes) to a clipboard.
@@ -32546,12 +32642,12 @@ TLV.
 TCL004 Verify that the accessory responds with the appropriate error codes for NFC Access Issuer Key Requests
 (Duplicate, Not Supported, Out Of Resources, Does Not Exist).
 
-Applies to accessories that support the NFC Access service. Applies to accessories that use HAP over BLE.
+Applies to accessories that support the NFC Access service. Applies to accessories that use HAP over BLE.
 Perform this test case with HAT using the steps below.
 
 1. Pair and discover accessory.
 
-2. For HAP over BLE accessories, enable the “Pair Resume Keep Alive” checkbox with a 27-second in-
+2. For HAP over BLE accessories, enable the “Pair Resume Keep Alive” checkbox with a 27-second in-
 terval.
 
 3.
@@ -32623,7 +32719,7 @@ mented value on each addition of a Controller.
 
 19. Repeat steps 17 and 18 until all of the Controllers have been added.
 
-20.
+20.
 
 In the Write[tlv8] pane, select the “Build TLV” button, on the NFC Access Control Point TLV Builder
 select the Operation Type as “Add”, select the NFC Access Request Type as “Issuer Key Request”,
@@ -32631,7 +32727,7 @@ select the Issuer Key Type as “Ed25519”, enter 32 bytes of dummy HAP Public 
 “aabbccddeeffaabbccddeeffaabbccddeeffaabbccddeeffaabbccddeeffaabb” into “Issuer Key” field,
 then select “Build TLV”.
 
-21. Select the “Write” button to send TLV to the accessory.
+21. Select the “Write” button to send TLV to the accessory.
 
 22.
 
@@ -32693,7 +32789,7 @@ Awake”, then select “Done”.
 In the left sidebar select “Controller 1” and select the “Companion Browser” button under the “HomeKit
 Companion” pane.
 
-6.
+6.
 
 In the pop-up Companion Browser menu, select the “Connect” button.
 
@@ -32702,10 +32798,10 @@ minimize the Companion Browser.
 
 8.
 
+9.
+
 In the left sidebar of the Controllers window, select the “Configuration State” characteristic in the “NFC
 Access” service and enable Event Notifications.
-
-9.
 
 In the left sidebar of the Controllers window, select the “NFC Access Control Point” characteristic in
 the “NFC Access” service.
@@ -32772,7 +32868,7 @@ In the Write[tlv8] pane, select the “Build TLV” button, on the NFC Access Co
 select the Operation Type as “List”, select the NFC Access Request Type as “Device Credential Key
 Request”, and select the Device Credential Key State as “Active”, then select “Build TLV”.
 
-25. Select the “Write” button to send TLV to the accessory.
+25. Select the “Write” button to send TLV to the accessory.
 
 26.
 
@@ -32782,7 +32878,7 @@ In the Events View of trace, on the write response, verify that the accessory re
 TCL006 Verify that the accessory responds with the appropriate error codes for NFC Access Device Credential
 Key Requests (Duplicate, Not Supported, Does Not Exist).
 
-Applies to accessories that support the NFC Access service. Applies to accessories that use HAP over BLE.
+Applies to accessories that support the NFC Access service. Applies to accessories that use HAP over BLE.
 Perform this test case with HAT using the steps below.
 
 1. Pair and discover accessory.
@@ -32848,7 +32944,7 @@ select the Operation Type as “Add”, select the NFC Access Request Type as �
 Request”, on the Select Companion menu select the iPhone that is running Companion app, on the
 Device Credential Key State select “Active”, on the Device Credential Key Type select “NIST256”.
 
-17. Verify that the Device Credential Key and Issue Key Identifier are populated in their respective fields,
+17. Verify that the Device Credential Key and Issue Key Identifier are populated in their respective fields,
 then select “Build TLV”.
 
 18. Select the “Write” button to send TLV to the accessory.
@@ -32858,7 +32954,7 @@ then select “Build TLV”.
 In the Events View of trace, on the write response, verify that the accessory returns a Status Code of
 2 (DUPLICATE).
 
-20.
+20.
 
 In the Write[tlv8] pane, select the “Build TLV” button, on the NFC Access Control Point TLV Builder
 select the Operation Type as “Add” and select the NFC Access Request Type as “Device Credential
@@ -32922,7 +33018,7 @@ then select the Reader Key Type as “NIST256ʼʼ.
 7. Verify that the Reader Private Key and Reader Identifier are populated in their respective fields, then
 select “Build TLV”.
 
-8. Select the “Write” button to send this TLV to the accessory.
+8. Select the “Write” button to send this TLV to the accessory.
 
 9.
 
@@ -32932,7 +33028,7 @@ In the Events View of trace, on the write response, verify that the accessory re
 10. Verify that a Characteristic Notification is sent for the Configuration State characteristic with incre-
 mented value.
 
-11.
+11.
 
 In the Write[tlv8] pane, select the “Build TLV” button, on the NFC Access Control Point TLV Builder
 select the Operation Type as “List”, select the NFC Access Request Type as “Reader Key Request”,
@@ -32992,10 +33088,10 @@ terval.
 
 3.
 
-4.
-
 In the left sidebar of the Controllers window, select the “Configuration State” characteristic in the “NFC
 Access” service and enable Event Notifications.
+
+4.
 
 In the left sidebar of the Controllers window, select the “NFC Access Control Point” characteristic in
 the “NFC Access” service.
@@ -33010,7 +33106,7 @@ In the Write[tlv8] pane, select the “Build TLV” button, on the NFC Access Co
 select the Operation Type as “Add” and select the NFC Access Request Type as “Reader Key Request”,
 then select the Reader Key Type as “NIST256”.
 
-7. Verify that the Reader Private Key and Reader Identifier are populated in their respective fields, then
+7. Verify that the Reader Private Key and Reader Identifier are populated in their respective fields, then
 select “Build TLV”.
 
 8. Select “Write” button to send TLV to the accessory.
@@ -33073,7 +33169,8 @@ In the Events View of trace, on the write response, verify that the accessory re
 22.
 
 In the Write[tlv8] pane, select the “Build TLV” button, on the NFC Access Control Point TLV Builder
-select the Operation Type as “Remove” and select the NFC Access Request Type as “Reader Key
+
+select the Operation Type as “Remove” and select the NFC Access Request Type as “Reader Key
 Request”, enter dummy identifier “aabbccddeeffaabb” in Identifier field, then select “Build TLV”.
 
 23. Select the “Write” button to send TLV to the accessory.
@@ -33083,7 +33180,8 @@ Request”, enter dummy identifier “aabbccddeeffaabb” in Identifier field, t
 In the Events View of trace, on the write response, verify that the accessory returns a Status Code of
 3 (DOES NOT EXIST).
 
-TCL009 Verify that the device credential key can be suspended and resumed on the accessory.
+!!!
+TCL009 Verify that the device credential key can be suspended and resumed on the accessory.
 
 Applies to accessories that support the NFC Access service. Applies to accessories that use HAP over BLE.
 Perform this test case with HAT using the steps below.
@@ -33144,7 +33242,7 @@ In the Events View of trace, on the write response, verify that the accessory re
 16. Verify that the Characteristic Notification is sent for the Configuration State characteristic with incre-
 mented value.
 
-17.
+17.
 
 In the Write[tlv8] pane, select the “Build TLV” button, on the NFC Access Control Point TLV Builder
 select the Operation Type as “Add” and select the NFC Access Request Type as “Device Credential
@@ -33156,7 +33254,7 @@ then select “Build TLV”.
 
 19. Select the “Write” button to send TLV to the accessory.
 
-20.
+20.
 
 In the Events View of trace, on the write response, verify the write TLV is a success (0x00).
 
@@ -33216,7 +33314,7 @@ which is suspended and TLV Type 3 is set for value 0 (SUCCESS).
 
 35. Tap the NFC-sensitive area of the accessory with an iPhone running the Companion app.
 
-36.
+36.
 
 In the Companion App Transaction details, verify that the “Select”, “Auth 0”, “Auth 1”, and “Control
 Flow” commands are received, and that the companion app shows the transaction as “Succeeded” on
@@ -33232,7 +33330,7 @@ select the Operation Type as “Add” and select the NFC Access Request Type as
 Key Request”, on the Select Companion menu select the iPhone that is running Companion app, on the
 Device Credential Key State select “Active”, then select the Device Credential Key Type as “NIST256”.
 
-39. Verify that the Device Credential Key and Issue Key Identifier are populated in their respective fields,
+39. Verify that the Device Credential Key and Issue Key Identifier are populated in their respective fields,
 then select “Build TLV”.
 
 40. Select the “Write” button to send TLV to the accessory.
@@ -33283,7 +33381,7 @@ In the Companion Browser pop-up menu, select the “Connect” button.
 7. Verify that the Green checkmark is seen next to the connected phone on the Companion Browser and
 minimize the Companion Browser.
 
-8.
+8.
 
 9.
 
@@ -33306,7 +33404,7 @@ then select the Reader Key Type as “NIST256”.
 12. Verify that the Reader Private Key and Reader Identifier are populated in their respective fields, then
 select “Build TLV”.
 
-13. Select the “Write” button to send TLV to the accessory.
+13. Select the “Write” button to send TLV to the accessory.
 
 14.
 
@@ -33359,11 +33457,11 @@ then select “Build TLV”.
 
 26.
 
-27.
-
 In the Events View of trace, on the write response, verify that the accessory returns TLV Type 1 with 8
 bytes of the Reader Key Identifier and TLV Type 2 with value 0 (SUCCESS). Right-click the Reader Key
 Identifer and copy the raw bytes into a notes or text file.
+
+27.
 
 In the Write[tlv8] pane, select the “Build TLV” button, on the NFC Access Control Point TLV Builder
 select the Operation Type as “List” and select the NFC Access Request Type as “Device Credential
@@ -33380,7 +33478,7 @@ Credential Key Identifer and copy the raw bytes into a notes or text file.
 30. Reboot the accessory, wait for it to show up in BLE discovery, then perform “Discover” under the
 Summary pane.
 
-31. For HAP over BLE accessories, deselect and select the “Pair Resume Keep Alive” checkbox with a
+31. For HAP over BLE accessories, deselect and select the “Pair Resume Keep Alive” checkbox with a
 27-second interval.
 
 32.
@@ -33437,7 +33535,7 @@ Applies to accessories that support the NFC Access service. Applies to accessori
 Applies to accessories using the HAP over Thread transport. Perform this test case with HAT using the steps
 below.
 
-1. Pair and discover accessory.
+1. Pair and discover accessory.
 
 2. For HAP over BLE accessories, enable the “Pair Resume Keep Alive” checkbox with a 27-second in-
 terval.
@@ -33452,7 +33550,7 @@ Awake”, then select “Done”.
 In the left sidebar select “Controller 1” and select the “Companion Browser” button under the “HomeKit
 Companion” pane.
 
-6.
+6.
 
 In the Companion Browser pop-up menu, select the “Connect” button.
 
@@ -33508,7 +33606,7 @@ then select “Build TLV”.
 20. For HAP over BLE accessories, in the Events View of trace, on the write response verify that the ac-
 cessory returns a Status Code of 0 (SUCCESS).
 
-21. For HAP over Thread accessories, in the HAP Traffic View of trace under Thread, on the write response
+21. For HAP over Thread accessories, in the HAP Traffic View of trace under Thread, on the write response
 verify that the accessory returns a Status Code of 0 (SUCCESS).
 
 22. Verify that a Characteristic Notification is sent for the Configuration State characteristic with incre-
@@ -33522,7 +33620,7 @@ then select “Build TLV”.
 
 24. Select the “Write” button to send TLV to the accessory.
 
-25. For HAP over BLE accessories, in the Events View of trace, on the write response verify that the ac-
+25. For HAP over BLE accessories, in the Events View of trace, on the write response verify that the ac-
 cessory returns TLV Type 1 with 8 bytes of the Issuer Key Identifier and TLV Type 2 with value 0 (SUC-
 CESS).
 
@@ -33573,7 +33671,7 @@ with value 0 (SUCCESS).
 
 In the Options pane, deselect and select “Write with Response”.
 
-39.
+39.
 
 In the Write[tlv8] pane, select the “Build TLV” button, on the NFC Access Control Point TLV Builder
 select the Operation Type as “List” and select the NFC Access Request Type as “Reader Key Request”,
@@ -33587,7 +33685,7 @@ cessory returns 0 bytes value.
 42. For HAP over Thread accessories, in the HAP Traffic View of trace under Thread, on the write response,
 verify that the accessory returns 0 bytes value.
 
-43.
+43.
 
 In the Write[tlv8] pane, select the “Build TLV” button, on the NFC Access Control Point TLV Builder
 select the Operation Type as “List” and select the NFC Access Request Type as “Device Credential
@@ -33643,7 +33741,7 @@ the “NFC Access” service.
 
 In the Options pane, select “Write with Response”.
 
-11.
+11.
 
 In the Write[tlv8] pane, select the “Build TLV” button, on the NFC Access Control Point TLV Builder
 select the Operation Type as “Add” and select the NFC Access Request Type as “Reader Key Request”,
@@ -33659,7 +33757,7 @@ select “Build TLV”.
 In the Events View of trace, on the write response, verify that the accessory returns a Status Code of
 0 (SUCCESS).
 
-15. Verify that a Characteristic Notification is sent for the Configuration State characteristic with incre-
+15. Verify that a Characteristic Notification is sent for the Configuration State characteristic with incre-
 mented value.
 
 16.
@@ -33711,7 +33809,7 @@ verify that the Companion app shows “Transaction Failed”.
 TCL013 Verify that the Non-Admin controllers do not have permission to write NFC Keys (Reader Key, Device
 Credential Key) to the accessory.
 
-Applies to accessories that support the NFC Access service. Applies to accessories that use HAP over BLE.
+Applies to accessories that support the NFC Access service. Applies to accessories that use HAP over BLE.
 Applies to accessories using the HAP over Thread transport. Perform this test case with HAT using the steps
 below.
 
@@ -33727,7 +33825,7 @@ not select the “Admin” checkbox, then select “Add Controller”.
 4. Under Controller 1, disconnect the accessory, navigate to Controller 2 in the left sidebar, and Discover
 the accessory.
 
-5. For HAP over BLE accessories, enable the “Pair Resume Keep Alive” checkbox with a 27-second in-
+5. For HAP over BLE accessories, enable the “Pair Resume Keep Alive” checkbox with a 27-second in-
 terval.
 
 6. Launch the Companion app on iPhone, select the gear icon on the top right, enable “Keep Companion
@@ -33749,10 +33847,10 @@ minimize the Companion Browser.
 
 11.
 
-12.
-
 In the left sidebar of the Controllers window, select the “Configuration State” characteristic in the “NFC
 Access” service and enable Event Notifications.
+
+12.
 
 In the left sidebar of the Controllers window, select the “NFC Access Control Point” characteristic in
 the “NFC Access” service.
@@ -33781,7 +33879,7 @@ verify that the accessory returns a Status Code of 0x06 (INVALID REQUEST).
 19. Verify that no Characteristic Notification is sent for the Configuration State characteristic with incre-
 mented value.
 
-20.
+20.
 
 In the Write[tlv8] pane, select the “Build TLV” button, on the NFC Access Control Point TLV Builder
 select the Operation Type as “Add”, select the NFC Access Request Type as “Device Credential Key
@@ -33799,7 +33897,7 @@ the accessory returns a Status Code of 0x06 (INVALID REQUEST).
 24. For HAP over Thread accessories, in the HAP Traffic View of trace under Thread, on the write response
 verify that the accessory returns a Status Code of 0x06 (INVALID REQUEST).
 
-25. Verify that no Characteristic Notification is sent for the Configuration State characteristic with incre-
+25. Verify that no Characteristic Notification is sent for the Configuration State characteristic with incre-
 mented value.
 
 26. On the Companion app on iPhone, verify that the status on top shows “Tap to Unlock Ready”.
@@ -33839,7 +33937,7 @@ In the left sidebar of the Controllers window, see each of the accessoryʼs serv
 
 4. Verify that the service includes the “Access Code Supported Configuration” characteristic.
 
-5. Verify that the characteristic has the permission “Paired Read”.
+5. Verify that the characteristic has the permission “Paired Read”.
 
 6. Verify that the characteristic format is “TLV8”.
 
@@ -33857,7 +33955,7 @@ In the left sidebar of the Controllers window, see each of the accessoryʼs serv
 
 13. Verify that the service includes the “Active” characteristic.
 
-14. Verify that the characteristic has the permission “Paired Read”, “Paired Write” and “Notify”.
+14. Verify that the characteristic has the permission “Paired Read”, “Paired Write” and “Notify”.
 
 15. Verify that the characteristic format is “uint8”.
 
@@ -33896,7 +33994,7 @@ value of TLV Type 2 for Minimum Length of Access Code.
 9. For HAP over BLE accessories, in the HAP Transaction View of trace, on the write response verify that
 the accessory returns a Status Code of 0x01 (Unsupported PDU).
 
-10. For HAP over Thread accessories, in the HAP Traffic View of trace, on the write response verify that
+10. For HAP over Thread accessories, in the HAP Traffic View of trace, on the write response verify that
 the accessory returns a Status Code of 0x01 (Unsupported PDU).
 
 !!!
@@ -33912,10 +34010,10 @@ terval.
 
 3.
 
+4.
+
 In the left sidebar of the Controllers window, select the “Configuration State” characteristic in the “Ac-
 cess Code” service and enable Event Notifications.
-
-4.
 
 In the left sidebar of the Controllers window, select the “Access Code Control Point” characteristic in
 the “Access Code” service.
@@ -33973,7 +34071,7 @@ In the Write[tlv8] pane, select the “Build TLV” button, on the Access Code C
 select the Operation Type as “Update”, enter an Access Code Identifier “0” in the field, enter Access
 Code as “22222222”, select the “Add” button, then select “Build TLV”.
 
-18. Select the “Write” button to send TLV to the accessory.
+18. Select the “Write” button to send TLV to the accessory.
 
 19.
 
@@ -33994,7 +34092,7 @@ In the Write[tlv8] pane, select the “Build TLV” button, on the Access Code C
 select the Operation Type as “Remove”, enter an Access Code Identifier “0” in the field, select the
 “Add” button, then select “Build TLV”.
 
-24. Select the “Write” button to send TLV to the accessory.
+24. Select the “Write” button to send TLV to the accessory.
 
 25.
 
@@ -34046,7 +34144,7 @@ In the Events View of trace, on the write response, verify that the write TLV is
 9. Verify that a Characteristic Notification is sent for the Configuration State characteristic with incre-
 mented value.
 
-10. Enter the Access Code “11111111” on the keypad of the accessory and verify that the accessory locks
+10. Enter the Access Code “11111111” on the keypad of the accessory and verify that the accessory locks
 or unlocks.
 
 11.
@@ -34068,10 +34166,10 @@ then select “Build TLV”.
 
 15.
 
+16.
+
 In the Events View of trace, on the write response, verify that the accessory responds with the Access
 Code Control Response with a status code value of 5 (Error. Smaller than min length).
-
-16.
 
 In the Write[tlv8] pane, select the “Build TLV” button, on the Access Code Control Point TLV Builder
 select the Operation Type as “Add”, enter an Access Code “111111111” in the field, select the “Add”
@@ -34129,7 +34227,7 @@ In the Write[tlv8] pane, select the “Build TLV” button, on the Access Code C
 select the Operation Type as “Update”, enter an Access Code Identifier “0” in the field, enter Access
 Code as “aaaa” and select the “Add” button, then select “Build TLV”.
 
-29. Select the “Write” button to send TLV to the accessory.
+29. Select the “Write” button to send TLV to the accessory.
 
 30.
 
@@ -34155,7 +34253,7 @@ In the Write[tlv8] pane, select the “Build TLV” button, on the Access Code C
 select the Operation Type as “Read”, enter an Access Code Identifier “10” in the field, select the “Add”
 button, then select “Build TLV”.
 
-35. Select the “Write” button to send TLV to the accessory.
+35. Select the “Write” button to send TLV to the accessory.
 
 36.
 
@@ -34208,7 +34306,7 @@ added is equal to the Maximum supported Access Codes (TLV Type 4) obtained on st
 
 48. Add one more supported length Access Code to the accessory by repeating steps 42-46.
 
-49.
+49.
 
 In the Events View of trace, on the write response, verify that the accessory responds with an Ac-
 cess Code Control Response with a status code value of 2 (Error. Exceeded maximum allowed access
@@ -34226,7 +34324,7 @@ Perform this test case with HAT using the steps below.
 2. For HAP over BLE accessories, enable the “Pair Resume Keep Alive” checkbox with a 27-second in-
 terval.
 
-3.
+3.
 
 4.
 
@@ -34273,15 +34371,16 @@ Identifier “2” in the field and select “Add”, enter an Access Code Ident
 
 13.
 
-14.
-
 In the Events View of trace, on the write response, verify that the accessory responds with 5 Access
 Code Control Response TLVs with Access Code values 0000, 1111, 2222, 3333, 4444 returned in each
 Access Code Control Response TLV and a Status Code of value of 0 (Success).
 
+14.
+
 In the Write[tlv8] pane, select the “Build TLV” button, on the Access Code Control Point TLV Builder
 select the Operation Type as “Update” and enter an Access Code Identifier of “0”, Access Code of
-“000000” and select the “Add” button, enter an Access Code Identifier of “1”, Access Code of “111111”
+
+“000000” and select the “Add” button, enter an Access Code Identifier of “1”, Access Code of “111111”
 and select the “Add” button, enter an Access Code Identifier of “2”, Access Code of “222222” and
 select the “Add” button, enter an Access Code Identifier of “3”, Access Code of “333333” and select
 the “Add” button, enter an Access Code Identifier of “4”, Access Code of “444444” and select the
@@ -34300,7 +34399,7 @@ mented value.
 18. Enter the Access Codes 000000, 111111, 222222, 333333 and 444444 on the keypad one by one and
 verify that the accessory locks or unlocks with these Access Codes.
 
-19.
+19.
 
 In the Write[tlv8] pane, select the “Build TLV” button, on the Access Code Control Point TLV Builder
 select the Operation Type as “List”, then select “Build TLV”.
@@ -34353,7 +34452,7 @@ Applies to accessories that support the Access Code service. Applies to accessor
 Applies to accessories using the HAP over Thread transport. Perform this test case with HAT using the steps
 below.
 
-1. Pair and discover accessory.
+1. Pair and discover accessory.
 
 2. Add an additional Controller, Controller 2.
 
@@ -34368,10 +34467,10 @@ terval.
 
 6.
 
+7.
+
 In the left sidebar of the Controller 2 window, select the “Configuration State” characteristic in the
 “Access Code” service and enable Event Notifications.
-
-7.
 
 In the left sidebar of the Controller 2 window, select the “Access Code Control Point” characteristic in
 the “Access Code” service.
@@ -34404,6 +34503,11 @@ Access Codes have been entered.
 Applies to accessories that support the Access Code service. Applies to accessories that use HAP over BLE.
 Perform this test case with HAT using the steps below.
 
+MFi Portal submission needed:
+
+• Attach directions to the Accessory Compliance Questionnaire on the MFi portal that explains the key-
+pad disable mechanism and timing adherence implemented on the accessory.
+
 1. Pair and discover accessory.
 
 2. For HAP over BLE accessories, enable the “Pair Resume Keep Alive” checkbox with a 27-second in-
@@ -34411,12 +34515,12 @@ terval.
 
 3.
 
-4.
-
-5.
-
 In the left sidebar of the Controllers window, select the “Active” characteristic in the “Access Code”
 service and enable Event Notifications.
+
+4.
+
+5.
 
 In the left sidebar of the Controllers window, select the “Access Code Control Point” characteristic in
 the “Access Code” service.
@@ -34441,7 +34545,7 @@ Active characteristic is sent with value 0 (keypad inactive).
 10. Verify that the keypad is actually disabled by pressing the keys on the accessoryʼs keypad to confirm
 that it does not respond.
 
-11. Wait until a Characteristic Notification is sent for Active characteristics with value 1 (keypad active)
+11. Wait until a Characteristic Notification is sent for Active characteristics with value 1 (keypad active)
 and keep a count of invalid attempts, enter invalid Access Codes on the keypad until a Characteristic
 Notification for Active characteristic is sent with value 0 (keypad inactive).
 
@@ -34476,7 +34580,7 @@ Perform this test case with HAT using the steps below.
 2. For HAP over BLE accessories, enable the “Pair Resume Keep Alive” checkbox with a 27-second in-
 terval.
 
-3.
+3.
 
 In the left sidebar of the Controllers window, select the “Access Code Control Point” characteristic in
 the “Access Code” service.
@@ -34509,7 +34613,7 @@ service.
 
 In the Options pane, select “Write with Response”.
 
-11.
+11.
 
 In the Write[Unsigned Integer] pane, select the “Write 0” button (Inactive).
 
@@ -34563,7 +34667,7 @@ In the Write[tlv8] pane, select the “Build TLV” button, on the Access Code C
 select the Operation Type as “Add”, enter an Access Code “0000” in the field, select the “Add” button,
 then select “Build TLV”.
 
-7. Select the “Write” button to send TLV to the accessory.
+7. Select the “Write” button to send TLV to the accessory.
 
 8.
 
@@ -34586,7 +34690,7 @@ cover” under the Summary pane.
 In the left sidebar of the Controllers window, select the “Access Code Control Point” characteristic in
 the “Access Code” service.
 
-14.
+14.
 
 In the Options pane deselect and select “Write with Response”.
 
@@ -34635,7 +34739,7 @@ cess Code” service and enable Event Notifications.
 In the left sidebar of the Controllers window, select the “Configuration State” characteristic in the “Ac-
 cess Code” service and perform a Paired Read.
 
-5. Verify that the accessory responds with a Configuration State value that is 0 or 1.
+5. Verify that the accessory responds with a Configuration State value that is 0 or 1.
 
 6.
 
@@ -34661,7 +34765,7 @@ cessory responds with Access Code Control Response TLV with a Status Code of 0 (
 verify that the accessory responds with Access Code Control Response TLV with a Status Code of 0
 (Success).
 
-12. Verify that a Characteristic Notification is sent for the Configuration State characteristic with incre-
+12. Verify that a Characteristic Notification is sent for the Configuration State characteristic with incre-
 mented value.
 
 13. Enter the Access Code “0000” on keypad and verify that the accessory locks or unlocks.
@@ -34707,7 +34811,7 @@ button, then select “Build TLV”.
 cessory responds with Access Code Control Response TLV with a Status Code of 9 (Error. Does Not
 Exist).
 
-25. For HAP over Thread accessories, in the HAP Traffic View of trace under Thread, on the write response,
+25. For HAP over Thread accessories, in the HAP Traffic View of trace under Thread, on the write response,
 verify that the accessory responds with Access Code Control Response TLV with a Status Code of 9
 (Error. Does Not Exist).
 
@@ -34732,7 +34836,7 @@ cess Code” service and enable Event Notifications.
 In the left sidebar of the Controllers window, select the “Configuration State” characteristic in the “Ac-
 cess Code” service and perform a Paired Read.
 
-5. Verify that the accessory responds with a Configuration State value that is 0 or 1.
+5. Verify that the accessory responds with a Configuration State value that is 0 or 1.
 
 6.
 
@@ -34777,7 +34881,7 @@ cess Code” service and perform a Paired Read.
 
 18. Verify that the accessory responds with a Configuration State value that is 0 or 1.
 
-19.
+19.
 
 In the left sidebar of the Controllers window, select the “Access Code Control Point” characteristic in
 the “Access Code” service.
@@ -34808,7 +34912,7 @@ Applies to accessories that support the NFC Access service. Applies to accessori
 Code service. Applies to accessories that use HAP over BLE. Perform this test case with HAT using the steps
 below.
 
-1. Pair and discover accessory.
+1. Pair and discover accessory.
 
 2.
 
@@ -34850,7 +34954,7 @@ In the Events view of trace, verify that Characteristic Configuration Completed 
 6. Launch the Companion app on iPhone, select the gear icon on the top right, enable “Keep Companion
 Awake”, then select “Done”.
 
-7. Select the “NFC Lock” button on the Companion app on iPhone.
+7. Select the “NFC Lock” button on the Companion app on iPhone.
 
 8.
 
@@ -34884,7 +34988,7 @@ select “Build TLV”.
 
 15. Select the “Write” button to send TLV to the accessory.
 
-16.
+16.
 
 In the Events View of trace, on the write response, verify that the accessory returns a Status Code of
 0 (Success).
@@ -34930,7 +35034,7 @@ source is set as “NFC”. Copy the 4 bytes of Issuer Key Identifier to a notes
 In the left sidebar of the Controllers window, select the “NFC Access Control Point” characteristic in
 the “NFC Access” service.
 
-28.
+28.
 
 In the Options pane deslect and select “Write with Response”.
 
@@ -34964,7 +35068,7 @@ the “Access Code” service.
 
 In the Options pane, select “Write with Response”.
 
-36.
+36.
 
 In the Write[tlv8] pane, select the “Build TLV” button, on the Access Code Control Point TLV Builder
 select the Operation Type as “Add”, enter an Access Code “1111” in the field, select “Add” button, then
@@ -35010,8 +35114,7 @@ In the Events view of trace, verify that Characteristic Configuration Completed 
 47. Perform a Manual Lock/Unlock on the accessory, and perform Tap to unlock with the Companion app
 and verify that no Encrypted Broadcast Notification is seen on BLE Discovery.
 
-!!!
-TCL027 Verify that the accessory sends Context information in Connected Mode.
+TCL027 Verify that the accessory sends Context information in Connected Mode.
 
 Applies to accessories that support the NFC Access service. Applies to accessories that support the Access
 Code service. Applies to accessories that use HAP over BLE. Perform this test case with HAT using the steps
@@ -35037,7 +35140,7 @@ Awake”, then select “Done”.
 
 In the Companion Browser pop-up menu, select the “Connect” button.
 
-7. Verify that the Green checkmark is seen next to the connected phone on the Companion Browser and
+7. Verify that the Green checkmark is seen next to the connected phone on the Companion Browser and
 minimize the Companion Browser.
 
 8.
@@ -35086,7 +35189,7 @@ In the Write[tlv8] pane, select the “Build TLV” button, on the NFC Access Co
 select the Operation Type as “List” and select the NFC Access Request Type as “Issuer Key Request”,
 then select “Build TLV”.
 
-19. Select the “Write” button to send TLV to the accessory.
+19. Select the “Write” button to send TLV to the accessory.
 
 20.
 
@@ -35118,7 +35221,7 @@ to a notes/text file on step 20.
 If the accessory supports the “Access Code” Service, continue the below steps. If it does not support
 the “Access Code” Service, stop the tests.
 
-28.
+28.
 
 In the left sidebar of the Controllers window, select the “Access Code Control Point” characteristic in
 the “Access Code” service.
@@ -35164,7 +35267,7 @@ Perform this test case with HAT using the steps below.
 
 1. Pair and discover accessory.
 
-2. For HAP over BLE accessories, enable the “Pair Resume Keep Alive” checkbox with a 27-second in-
+2. For HAP over BLE accessories, enable the “Pair Resume Keep Alive” checkbox with a 27-second in-
 terval.
 
 3. Launch the Companion app on iPhone, select the gear icon on the top right, enable “Keep Companion
@@ -35193,7 +35296,7 @@ the “NFC Access” service.
 
 In the Options pane select “Write with Response”.
 
-10.
+10.
 
 In the Write[tlv8] pane, select the “Build TLV” button, on the NFC Access Control Point TLV Builder
 select the Operation Type as “Add” and select the NFC Access Request Type as “Reader Key Request”,
@@ -35242,7 +35345,7 @@ ceeded.
 If the transaction above succeeds, go to the next step. If it fails, perform steps 19-21 one more time
 and verify that the transaction succeeds.
 
-23. Tap the NFC-sensitive area of the accessory with an iPhone running the Companion app.
+23. Tap the NFC-sensitive area of the accessory with an iPhone running the Companion app.
 
 24.
 
@@ -35266,7 +35369,7 @@ Perform this test case with HAT using the steps below.
 
 1. Pair and discover accessory.
 
-2. For HAP over BLE accessories, enable the “Pair Resume Keep Alive” checkbox with a 27-second in-
+2. For HAP over BLE accessories, enable the “Pair Resume Keep Alive” checkbox with a 27-second in-
 terval.
 
 3. Launch the Companion app on iPhone, select the gear icon on the top right, enable “Keep Companion
@@ -35317,7 +35420,7 @@ select the Operation Type as “Add” and select the NFC Access Request Type as
 Key Request”, on the Select Companion menu select the iPhone that is running Companion app, select
 “Cancel” on NFC Access Control Point TLV builder.
 
-15. On the Companion app on iPhone, verify that the status on top shows “Tap to Unlock Ready”.
+15. On the Companion app on iPhone, verify that the status on top shows “Tap to Unlock Ready”.
 
 16. Tap the NFC-sensitive area of the accessory with an iPhone running the Companion app until the trans-
 action completes.
@@ -35342,7 +35445,7 @@ If it fails, perform steps 16-18 one more time and
 TCL030 If the accessory implements the “Hardware Finish” characteristic, verify that the Hardware Finish char-
 acteristic is set for the proper value.
 
-Applies to accessories that support the NFC Access service. Applies to accessories that use HAP over BLE.
+Applies to accessories that support the NFC Access service. Applies to accessories that use HAP over BLE.
 Applies to accessories using the HAP over Thread transport. Perform this test case with HAT using the steps
 below.
 
@@ -35378,7 +35481,7 @@ in Step 1, and click on the “Startʼʼ button to begin discovering Thread acce
 
 4. Pair and discover the accessory using the BLE Controller.
 
-5. With the Thread network present, navigate to the “Thread Transport” service, select the “Thread Con-
+5. With the Thread network present, navigate to the “Thread Transport” service, select the “Thread Con-
 trol Point” characteristic, click “Build TLV” within the “Write [tlv8]” panel, select “Set Thread Param-
 eters” from the menu, enter the details of the thread border router network, enter “0” in the “Forming
 Allowed” field, then click “Build TLV”.
@@ -35401,7 +35504,7 @@ Awake”, then select “Done”.
 In the left sidebar, select “Controller 2” (Thread controller) then select the “Companion Browser” but-
 ton under the “HomeKit Companion” pane.
 
-11.
+11.
 
 In the Companion Browser pop-up menu, select the “Connect” button.
 
@@ -35453,7 +35556,7 @@ Device Credential Key State select “Active”, then select the Device Credenti
 22. Verify that the Device Credential Key and Issue Key Identifier are populated in their respective fields,
 then select “Build TLV”.
 
-23. Select the “Write” button to send TLV to the accessory.
+23. Select the “Write” button to send TLV to the accessory.
 
 24.
 
@@ -35483,7 +35586,7 @@ ceeded.
 If the transaction above succeeds, go to the next step. If it fails, perform steps 27-29 one more time
 and verify that the transaction succeeds.
 
-31. Tap the NFC-sensitive area of the accessory with an iPhone running the Companion app.
+31. Tap the NFC-sensitive area of the accessory with an iPhone running the Companion app.
 
 32.
 
@@ -35519,7 +35622,7 @@ in Step 1, and click on the “Startʼʼ button to begin discovering Thread acce
 
 4. Pair and discover the accessory using the BLE Controller.
 
-5. With the Thread network present, navigate to the “Thread Transport” service, select the “Thread Con-
+5. With the Thread network present, navigate to the “Thread Transport” service, select the “Thread Con-
 trol Point” characteristic, click “Build TLV” within the “Write [tlv8]” panel, select “Set Thread Param-
 eters” from the menu, enter the details of the thread border router network, enter “0” in the “Forming
 Allowed” field, then click “Build TLV”.
@@ -35552,7 +35655,7 @@ In the Write[tlv8] pane, select the “Build TLV” button, on the Access Code C
 select the Operation Type as “Add”, enter an Access Code “1111” in the field, select the “Add” button,
 then select “Build TLV”.
 
-12. Select the “Write” button to send TLV to the accessory.
+12. Select the “Write” button to send TLV to the accessory.
 
 13.
 
@@ -35597,7 +35700,7 @@ In the Write[tlv8] pane, select the “Build TLV” button, on the Access Code C
 select the Operation Type as “Update”, enter an Access Code Identifier “0” in the field, enter Access
 Code as “2222”, select “Add”, then select “Build TLV”.
 
-23. Select the “Write” button to send TLV to the accessory.
+23. Select the “Write” button to send TLV to the accessory.
 
 24.
 
@@ -35633,7 +35736,7 @@ status code of 0 (Success).
 In the HAP Traffic view under Thread, verify that a Thread Event notification is sent for the Configuration
 State characteristic with incremented value.
 
-32. Enter the Access Code “2222” on the accessoryʼs keypad and verify that the accessory does not lock
+32. Enter the Access Code “2222” on the accessoryʼs keypad and verify that the accessory does not lock
 or unlock.
 
 !!!
@@ -35661,7 +35764,7 @@ trol Point” characteristic, click “Build TLV” within “Write [tlv8]” pa
 from the menu, enter the details of the thread border router network, enter “0” in the “Forming Al-
 lowed” field, then click “Build TLV”.
 
-6. Select “Write” to send the TLV to the accessory and check the Thread Discovery view of HAT Trace.
+6. Select “Write” to send the TLV to the accessory and check the Thread Discovery view of HAT Trace.
 The accessory must connect to the Border Router and show its Bonjour advertisement in the Thread
 Discovery view of HAT trace.
 
@@ -35689,7 +35792,7 @@ using the steps below.
 BLE controller. In the Summary panel of the controller, assign the Shared Key Store created in Step 1,
 and click on the “Startʼʼ button to begin discovering BLE accessories.
 
-3. Select the “+” at the bottom of the left sidebar and select “Create Thread Controller” to make a new
+3. Select the “+” at the bottom of the left sidebar and select “Create Thread Controller” to make a new
 virtual Thread controller. In the Summary panel of the controller, assign the Shared Key Store created
 in Step 1, and click on the “Startʼʼ button to begin discovering Thread accessories.
 
@@ -35722,7 +35825,7 @@ button under the “HomeKit Companion” pane.
 
 In the Companion Browser pop-up menu, select the “Connect” button.
 
-12. Verify that the Green checkmark is seen next to the connected phone on the Companion Browser and
+12. Verify that the Green checkmark is seen next to the connected phone on the Companion Browser and
 minimize the Companion Browser.
 
 13.
@@ -35765,7 +35868,7 @@ In the Write[tlv8] pane, select the “Build TLV” button, on the NFC Access Co
 select the Operation Type as “Add” and select the NFC Access Request Type as “Reader Key Request”,
 then select the Reader Key Type as “NIST256”.
 
-22. Verify that the Reader Private Key and Reader Identifier are populated in their respective fields, then
+22. Verify that the Reader Private Key and Reader Identifier are populated in their respective fields, then
 select “Build TLV”.
 
 23. Select the “Write” button to send TLV to the accessory.
@@ -35804,7 +35907,7 @@ State characteristic with incremented value.
 
 31. On the Companion app on iPhone verify that the status on top shows “Tap to Unlock Ready”.
 
-32. Tap the NFC-sensitive area of the accessory with an iPhone running the Companion app.
+32. Tap the NFC-sensitive area of the accessory with an iPhone running the Companion app.
 
 33.
 
@@ -35842,7 +35945,7 @@ In the HAP Traffic view under Thread, verify that the accessory sends a notifica
 identifier that is the same as the first 4 bytes of the Issuer Key Identifier copied on step 20 and that the
 source “NFC” is set by the accessory.
 
-41.
+41.
 
 If the transaction above succeeds, stop the test. If it fails, perform steps 37-40 one more time and
 verify that the transaction succeeds.
@@ -35884,16 +35987,47 @@ In the HAP Traffic view under Thread, verify that the accessory sends a notifica
 identifier that is the same as the 4 bytes of Access Code Identifier copied on step 48, and that the
 source “Keypad” is set by the accessory.
 
-!!!
-TCL035 Verify that the NFC accessory has Interoperability with iPhone and Watch.
+TCL035 Verify that the NFC accessory has Interoperability with iPhone and Watch.
 
 Applies to accessories that support the NFC Access service. Perform this test case using the Home app on
 iOS.
 
-1. Run the tests on an NFC accessory per the NFC Interoperability Test Plan on the MFi Portal.
+1. Run the tests on an NFC accessory as per the NFC Interoperability Test Plan on the MFi Portal.
 
 2. Verify that the NFC accessory meets all the criteria on the NFC Interoperability Test Plan.
 
+!!!
+TCL036 Verify that the ephemeral public key and the transaction identifier is updated by the accessory for each
+NFC transaction.
+
+Applies to accessories that support the NFC Access service. Applies to accessories that use HAP over BLE.
+Perform this test case using the Home app on iOS.
+
+MFi Portal submission needed:
+
+• Attach a completed Reader Security Questionnaire to the Accessory Compliance Questionnaire on the
+MFi portal. The Reader Security Questionnaire template can be obtained from the MFi portal.
+
+1. Pair the accessory in the Home App and complete the setup flow to add Home Key pass in the Wallet
+on iPhone.
+
+2. Setup NFC sniffer tool and attach the sniffer antenna to iPhone.
+
+3. Perform tap with an iPhone and the lock accessory on NFC sensitive region and capture the sniffer
+trace for this transaction.
+
+4. Parse the sniffer traces for Auth0 command and note down the reader ephemeral public key and the
+transaction identifier set by the lock accessory.
+
+5. Repeat steps 3 and 4, nine more times.
+
+6. Verify that there are no duplicates on the reader ephemeral public keys noted on the 10 NFC transac-
+tions performed.
+
+7. Verify that there are no duplicates on the transaction identifiers noted on the 10 NFC transactions
+performed.
+
+~~~
 1.26 Accessory Firmware Updates
 
 TCAFU001: Accessories that update firmware directly in the Home App must have “Firmware Update” service that includes
@@ -36419,8 +36553,9 @@ In the left sidebar of the Controllers window, select the “Data Stream Transpo
 TCAFU011 If the the Staging process is paused before it has completed and the SuperBinary cannot be retained, the
 “Firmware Update State” characteristic must be set to “Idle”.
 
-Applies to accessories that support Firmware Updates over UARP. Perform this test case with HAT using the
-steps below.
+Applies to accessories that support Firmware Updates over UARP. Applies to accessories that cannot retain
+partially transferred SuperBinary due to resource constraints. Perform this test case with HAT using the steps
+below.
 
 1. Pair and discover accessory.
 
@@ -36444,9 +36579,9 @@ within 10 seconds of sending the Start Command to set up the HDS connection.
 8. For IP accessories, select “Send Hello after session starts”, then select “Connectʼʼ within 10 seconds
 of sending the Start Command to set up the HDS connection.
 
-9. Select “Establish” to establish the asset transfer session.
+9. Select “Establish” to establish the asset transfer session.
 
-10. Under the “Firmware Update Asset Transfer” panel, select “Choose File...”.
+10. Under the “Firmware Update Asset Transfer” panel, select “Choose File...”.
 
 11. Select the SuperBinary file to be used for performing the Firmware Update.
 
@@ -36507,9 +36642,9 @@ of sending the Start Command to set up the HDS connection.
 15. Verify that the accessory sends a notification for the Firmware Update Status characteristic with the
 correct value set for the Firmware Update State field: 3 - Staging Succeeded.
 
-16. Verify that the Staged Firmware Version field reflects the version of the currently staged firmware.
+16. Verify that the Staged Firmware Version field reflects the version of the currently staged firmware.
 
-17. Verify that the string conforms to the same format that is required by the Firmware Revision charac-
+17. Verify that the string conforms to the same format that is required by the Firmware Revision charac-
 teristic.
 
 18.
@@ -36570,11 +36705,11 @@ correct value set for the Firmware Update State field: 3 - Staging Succeeded.
 
 18. Verify that the Staged Firmware Version field reflects the version of the currently staged firmware.
 
-19.
+19.
 
 In the left sidebar of the Controllers window, select the “Data Stream Transport Management” service.
 
-20. Under the “Firmware Update Asset Transfer” panel, select “Choose File...”.
+20. Under the “Firmware Update Asset Transfer” panel, select “Choose File...”.
 
 21. Select the SuperBinary file with a higher firmware version (N+2) than Step 12 to be used for performing
 the Firmware Update.
@@ -36634,9 +36769,9 @@ of sending the Start Command to set up the HDS connection.
 
 11. Select the SuperBinary file to be used for performing the Firmware Update.
 
-12. Select “Start” to begin the staging process.
+12. Select “Start” to begin the staging process.
 
-13. Wait for the staging process to complete so the Status changes to Staging completed.
+13. Wait for the staging process to complete so the Status changes to Staging completed.
 
 14. Enable event notifications on the Firmware Update Readiness characteristic under the Firmware Up-
 date service.
@@ -36696,9 +36831,9 @@ of sending the Start Command to set up the HDS connection.
 
 9. Select “Establish” to establish the asset transfer session.
 
-10. Under the “Firmware Update Asset Transfer” panel, select “Choose File...”.
+10. Under the “Firmware Update Asset Transfer” panel, select “Choose File...”.
 
-11. Select the SuperBinary file to be used for performing the Firmware Update.
+11. Select the SuperBinary file to be used for performing the Firmware Update.
 
 12. Select “Start” to begin the staging process.
 
@@ -36758,9 +36893,9 @@ within 10 seconds of sending the Start Command to set up the HDS connection.
 8. For IP accessories, select “Send Hello after session starts”, then select “Connectʼʼ within 10 seconds
 of sending the Start Command to set up the HDS connection.
 
-9. Select “Establish” to establish the asset transfer session.
+9. Select “Establish” to establish the asset transfer session.
 
-10. Under the “Firmware Update Asset Transfer” panel, select “Choose File...”.
+10. Under the “Firmware Update Asset Transfer” panel, select “Choose File...”.
 
 11. Select the SuperBinary file to be used for performing the Firmware Update.
 
@@ -36820,9 +36955,9 @@ within 10 seconds of sending the Start Command to set up the HDS connection.
 8. For IP accessories, select “Send Hello after session starts”, then select “Connectʼʼ within 10 seconds
 of sending the Start Command to set up the HDS connection.
 
-9. Select “Establish” to establish the asset transfer session.
+9. Select “Establish” to establish the asset transfer session.
 
-10. Under the “Firmware Update Asset Transfer” panel, select “Choose File...”.
+10. Under the “Firmware Update Asset Transfer” panel, select “Choose File...”.
 
 11. Select the SuperBinary file to be used for performing the Firmware Update.
 
@@ -36883,9 +37018,9 @@ within 10 seconds of sending the Start Command to set up the HDS connection.
 8. For IP accessories, select “Send Hello after session starts”, then select “Connectʼʼ within 10 seconds
 of sending the Start Command to set up the HDS connection.
 
-9. Select “Establish” to establish the asset transfer session.
+9. Select “Establish” to establish the asset transfer session.
 
-10. Under the “Firmware Update Asset Transfer” panel, select “Choose File...”.
+10. Under the “Firmware Update Asset Transfer” panel, select “Choose File...”.
 
 11. Select the SuperBinary file with a lower Firmware version (N+1) for performing the Firmware Update.
 
@@ -36944,9 +37079,9 @@ of sending the Start Command to set up the HDS connection.
 
 14. Select the SuperBinary file with a higher firmware version (N+2) for performing the Firmware Update.
 
-15. Select “Start” to begin the staging process.
+15. Select “Start” to begin the staging process.
 
-16. Wait for the staging process to complete so the Status changes to Staging completed.
+16. Wait for the staging process to complete so the Status changes to Staging completed.
 
 17. Verify that the accessory sends a notification for the Firmware Update Status characteristic with the
 correct value set for the Firmware Update State field: 3 - Staging Succeeded.
@@ -36957,17 +37092,17 @@ correct value set for the Firmware Update State field: 3 - Staging Succeeded.
 
 20. Stop the timer to the point where the accessory is available for communication again.
 
-21. Verify that the accessory sends a notification for the Firmware Update Status characteristic with the
-correct value set for the Firmware Update State field: 0 - Idle.
-
-22. Verify that the time in seconds that the accessory was unresponsive while the firmware update was
+21. Verify that the time in seconds that the accessory was unresponsive while the firmware update was
 being applied is less than the Update Duration field.
+
+22. Read the Firmware Update Status characteristic and verify that the correct value is set for the Firmware
+Update State field: 0 - Idle.
 
 23. Verify that the Staged Firmware Version field resets to an empty string after the staged firmware is
 applied.
 
-24. Verify that the accessory sends a notification for the Firmware Revision characteristic with the value
-set to the recently applied firmware version.
+24. Read the Firmware Revision characteristic and verify that the value is set to the recently applied firmware
+version.
 
 !!!
 TCAFU020 Accessories must not allow a firmware image to be downgraded after a successful firmware update.
@@ -37005,9 +37140,9 @@ of sending the Start Command to set up the HDS connection.
 
 12. Select “Start” to begin the staging process.
 
-13. Wait for the staging process to complete so the Status changes to Staging completed.
+13. Wait for the staging process to complete so the Status changes to Staging completed.
 
-14. Verify that the accessory sends a notification for the Firmware Update Status characteristic with the
+14. Verify that the accessory sends a notification for the Firmware Update Status characteristic with the
 correct value set for the Firmware Update State field: 3 - Staging Succeeded.
 
 15. Under the “Firmware Update Asset Transfer” panel, select “Apply”.
@@ -37040,6 +37175,7 @@ of sending the Start Command to set up the HDS connection.
 
 Reliability Test Cases
 
+~~~
 2.1 Stress
 
 TCS001: Discovery + Pair Setup + Accessory Deletion (IP and BLE).
@@ -37432,6 +37568,7 @@ functional characteristics and verify the accessory responds.
 
 User Test Cases
 
+~~~
 3.1 Home app
 
 TCHAA001: User must be able to pair accessory to the home using the Home app.
@@ -37459,6 +37596,7 @@ R15 or earlier. Perform this test case using the Home app on iOS.
 
 3. Verify after authorization data has been processed, the Home app is able to read/write to the accessory.
 
+~~~
 3.2 App for In-Field Provisioning through Software Authentication
 
 TCSWAA001: Accessory app must support updating the accessory to a HomeKit software token-based authentication sup-
@@ -37507,6 +37645,7 @@ running the accessory app.
 
 1. Verify the accessory app warns the user that a minimum iOS version of 11.3 is required.
 
+~~~
 3.3 App with full HomeKit API Support
 
 TCFA001: The accessory must either receive firmware updates automatically from a manufacturer hosted server without user
@@ -37858,6 +37997,7 @@ Applies to all accessories. Perform this test case using an iOS device running t
 
 1. Verify user is able to use accessory app to add endpoints.
 
+~~~
 3.4 App with limited HomeKit API Support
 
 TCLA001: Accessory app must provide firmware updates for the accessory.
@@ -37889,6 +38029,7 @@ Applies to all accessories. Perform this test case using an iOS device running t
 
 1. Verify user is able to use accessory app to add endpoints.
 
+~~~
 3.5 App Not Required
 
 TCNA001: The accessory must receive firmware updates automatically from a manufacturer hosted server without user inter-
@@ -37930,21 +38071,11 @@ Applies to all accessories.
 
 Revision History
 
-• Added: TCI050, TCPP003
+• Added: TCF055, TCL036, TCT101
 
-• Revised: TCADX006, TCAFU004, TCAFU014, TCBW001, TCBW002, TCBW003, TCBW004, TCBW005, TCB012,
-TCB016, TCB052, TCF002, TCF033, TCF041, TCH004, TCH010, TCH014, TCH058, TCH059, TCH083, TCHDS006,
-TCICAV069, TCL001, TCL002, TCL003, TCL004, TCL005, TCL006, TCL007, TCL008, TCL009, TCL010, TCL011,
-TCL012, TCL013, TCL015, TCL016, TCL017, TCL018, TCL019, TCL020, TCL021, TCL022, TCL023, TCL024, TCL026,
-TCL027, TCL028, TCL029, TCL030, TCL031, TCL032, TCL033, TCL034, TCL035, TCLS001, TCLS002, TCLS003,
-TCLS004, TCLS005, TCLS006, TCLS007, TCLS008, TCLS009, TCLS010, TCLS011, TCLS012, TCLS013, TCLS014,
-TCLS015, TCLS017, TCLS018, TCLS019, TCLS021, TCLS022, TCLS023, TCLS024, TCLS025, TCLS026, TCLS027,
-TCLS028, TCLS029, TCLS030, TCLS031, TCLS032, TCLS033, TCLS034, TCLS035, TCLS036, TCLS037, TCLS038,
-TCLS039, TCLS040, TCLS041, TCLS042, TCLS043, TCLS044, TCLS045, TCLS046, TCLS047, TCLS048, TCLS049,
-TCR002, TCR003, TCR004, TCR005, TCR008, TCR009, TCR016, TCR019, TCR020, TCR021, TCR022, TCR026,
-TCR032, TCR034, TCR035, TCR046, TCR059, TCR060, TCR061, TCR076, TCR097, TCR098, TCT004, TCT008,
-TCT021, TCT026, TCT033, TCT034, TCT036, TCT095, TCT100, TCWR003, TCWR004
+• Revised: TCAFU011, TCAFU019, TCF041, TCH047, TCI048, TCL020, TCL035, TCLS008, TCLS011, TCLS040, TCR001,
+TCR022, TCR034, TCR101
 
-• Removed: TCH013
+• No test cases has been removed in this revision
 
 
