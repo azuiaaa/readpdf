@@ -212,29 +212,9 @@ def read_tc_title(excel_path=None, old_sheet=None, sheet_name=None, revised_json
         # 更新移除的用例
         for tc in revised_json['removed']:
             """使用pandas获取单元格行列，并替换dataframe的值"""
-            row_tc = df.index[df["目录层级"].contains(tc, na=True)].tolist()  # this will only contain 2,4,6 rows
+            row_tc = df.index[df["目录层级"].str.contains(tc, na=True)].tolist()  # this will only contain 2,4,6 rows
             if len(row_tc) > 0:
                 df.drop(index=row_tc)
-
-        testcase_list = list()
-        testcase_list.extend(revised_json["added"])
-        testcase_list.extend(revised_json["revised"])
-        testcase_list.extend(revised_json["removed"])
-
-        def equal(x, **kwargs):
-            color = "#99ff66"
-            # if case_list:
-            #     for case in case_list:
-            #         if x.str.contains(case, na=True):
-            #             color = '#99ff66'  # light green  '#99ff66'
-            print(kwargs)
-            return f'color: {color}'
-
-        # axis =0 ，按列设置样式
-        df.style.apply(equal, 1, ["目录层级"], l=testcase_list)
-
-        # for tc in testcase_list:
-        #     df.style.applymap(lambda x: "color:green" if x.str.contains(tc) else "color:black", subset=["目录层级"])
 
         # 重新替换所有的用例的目录层级，避免因为大版本更新导致目录层级大调整所带来的人工更新成本
         for k, v in catalog.items():
@@ -255,7 +235,29 @@ def read_tc_title(excel_path=None, old_sheet=None, sheet_name=None, revised_json
         writer.book = book
         if new_sheet_name in writer.book.sheetnames:
             writer.book.remove(writer.book[new_sheet_name])
-        df.to_excel(excel_writer=writer, sheet_name=new_sheet_name, index=None)
+        testcase_list = list()
+        testcase_list.extend(revised_json["added"])
+        testcase_list.extend(revised_json["revised"])
+        testcase_list.extend(revised_json["removed"])
+
+        def style_apply(value, **kwargs):
+            """
+
+            :param series: 传过来的数据是DataFrame中的一列   类型为pd.Series
+            :param colors: 内容是字典  其中key 为标题名   value 为颜色
+            :return:
+            """
+            back_ground = 'background-color: white'
+            print("{}, {}".format(type(value), back_ground))
+            for item in kwargs["cases"]:
+                if value.find(item) > 0:
+                    back_ground = 'background-color: yellow'
+
+            print("{}, {}".format(value, back_ground))
+            return back_ground
+
+        # axis =0 ，按列设置样式
+        df.style.applymap(style_apply, ["目录层级"], colors="yellow", cases=testcase_list, df=df).to_excel(excel_writer=writer, sheet_name=new_sheet_name, index=None)
         writer.book.active = writer.book[new_sheet_name]
         writer.save()
         writer.close()
