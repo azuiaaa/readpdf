@@ -1,27 +1,19 @@
-import pandas as pd
-import numpy as np
-# 构造数据框
+from PyQt5.QtWidgets import QApplication, QMainWindow
+import sys
+
+from uiDialog import UIDialog
 
 if __name__ == '__main__':
-    np.random.seed(24)
-    df = pd.DataFrame(np.random.randn(6, 4), columns=list('ABCD'))
-    df.iloc[3, 3] = np.nan
-    df.iloc[0, 2] = np.nan
+    # 创建QApplication类的实例
+    app = QApplication(sys.argv)
+    # 创建一个主窗口
+    mainWindow = QMainWindow()  # 使用重写过的MainWindow类
+    # 创建Ui_MainWindow的实例
+    ui = UIDialog()
+    # 调用setupUi在指定窗口(主窗口)中添加控件
+    ui.setupUi()
+    # 显示窗口
+    ui.show()
 
-
-    def style_func(x) -> str:
-        # 元素颜色
-        color = 'red' if x > 0 else ''
-        # 元素字体
-        weight = 'bold' if x > 0 else 'normal'
-        # 返回样式
-        return ';'.join([f'color:{color}', f'font-weight:{weight}'])
-
-
-    df.style.bar(subset=['A'], align='mid', color=['#d65f5f', '#5fba7d']). \
-        background_gradient(subset=['B']). \
-        highlight_null(subset=['C']). \
-        applymap(style_func, subset=['D']). \
-        format('{:.2f}')
-    df.style.highlight_max()
-    print(df.style.render())
+    # 进入程序的主循环，并通过exit函数确保主循环安全结束
+    sys.exit(app.exec_())
